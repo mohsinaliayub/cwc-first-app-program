@@ -59,19 +59,30 @@ struct ContentView: View {
     
     func dealCards() {
         // Randomize the player's card
-        let newPlayerCardNumber = randomCardNumber()
-        playerCard = "card" + String(newPlayerCardNumber)
+        let playerCardValue = randomCardNumber()
+        playerCard = "card" + String(playerCardValue)
         
         // Randomize the cpu's card
-        let newCPUCardNumber = randomCardNumber()
-        cpuCard = "card" + String(newCPUCardNumber)
+        let cpuCardValue = randomCardNumber()
+        cpuCard = "card" + String(cpuCardValue)
         
         // Update the scores
+        updatePlayerAndCPUScores(playerCardValue: playerCardValue, cpuCardValue: cpuCardValue)
     }
     
     func randomCardNumber() -> Int {
         // We have card assets with numbers from 2 to 14.
         Int.random(in: 2...14)
+    }
+    
+    func updatePlayerAndCPUScores(playerCardValue: Int, cpuCardValue: Int) {
+        // Increase the score if card number of player is greater than CPU, and vice versa.
+        // In case of a tie, no need to update the scores.
+        if playerCardValue > cpuCardValue {
+            playerScore += 1
+        } else if playerCardValue < cpuCardValue {
+            cpuScore += 1
+        }
     }
 }
 
