@@ -19,37 +19,11 @@ struct ContentView: View {
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 12))
                 
-                HStack(alignment: .bottom) {
-                    Text("Niagara Falls")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                    VStack {
-                        HStack {
-                            ForEach(1...5, id: \.self) { index in
-                                // use half filled star as the final image
-                                let starImage = index % 5 != 0 ? "star.fill" : "star.leadinghalf.filled"
-                                Image(systemName: starImage)
-                            }
-                        }
-                        
-                        Text("(Reviews 361)")
-                    }
-                    .foregroundStyle(.orange)
-                    .font(.caption)
-                }
+                titleWithStarReviews
                 
                 Text("Come visit the falls for an experience of a lifetime.")
                 
-                HStack {
-                    Spacer()
-                    Image(systemName: "fork.knife")
-                    Image(systemName: "binoculars.fill")
-                }
-                .foregroundStyle(.gray)
-                .font(.caption)
+                bottomRightBlock
             }
             .padding()
             .background(
@@ -59,6 +33,47 @@ struct ContentView: View {
             )
             .padding()
         }
+    }
+    
+    private var titleWithStarReviews: some View {
+        HStack(alignment: .bottom) {
+            Text("Niagara Falls")
+                .font(.title)
+                .fontWeight(.bold)
+            
+            Spacer()
+            
+            reviewBlock
+        }
+    }
+    
+    private var reviewBlock: some View {
+        VStack {
+            starImages
+            Text("(Reviews 361)")
+        }
+        .foregroundStyle(.orange)
+        .font(.caption)
+    }
+    
+    private var starImages: some View {
+        HStack {
+            ForEach(1...5, id: \.self) { index in
+                // use half filled star as the final image
+                let starImage = index % 5 != 0 ? "star.fill" : "star.leadinghalf.filled"
+                Image(systemName: starImage)
+            }
+        }
+    }
+    
+    private var bottomRightBlock: some View {
+        HStack {
+            Spacer()
+            Image(systemName: "fork.knife")
+            Image(systemName: "binoculars.fill")
+        }
+        .foregroundStyle(.gray)
+        .font(.caption)
     }
 }
 
