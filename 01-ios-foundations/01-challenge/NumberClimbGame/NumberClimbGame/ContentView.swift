@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var shouldIncrease = true
     
     var body: some View {
-        VStack {
+        VStack(spacing: 12) {
             Text("\(number)")
                 .font(.largeTitle)
             Button("Tap Me!") {
@@ -23,19 +23,21 @@ struct ContentView: View {
     }
     
     func increaseOrDecrease() {
-        if shouldIncrease {
-            increase()
-        } else {
-            decrease()
-        }
-        
         // if number goes above 50, start decreasing.
         // If number goes below 0, start increasing.
-        if number > 50 {
-            shouldIncrease = false
-        }
-        if number < 0 {
-            shouldIncrease = true
+        let upperLimit = 50
+        let lowerLimit = 0
+        
+        if shouldIncrease {
+            increase()
+            if number > upperLimit {
+                shouldIncrease = false
+            }
+        } else {
+            decrease()
+            if number < lowerLimit {
+                shouldIncrease = true
+            }
         }
     }
     
