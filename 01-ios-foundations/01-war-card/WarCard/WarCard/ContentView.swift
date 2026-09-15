@@ -19,7 +19,9 @@ struct ContentView: View {
                 
                 playerAndCPUCardsView
                 
-                Button(action: { }) {
+                Button {
+                    dealCards()
+                } label: {
                     Image("button")
                 }
                 
@@ -47,6 +49,10 @@ struct ContentView: View {
             Spacer()
         }
         .foregroundStyle(.white)
+    }
+    
+    func dealCards() {
+        print("Deal cards")
     }
 }
 
