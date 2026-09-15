@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    var playerCard = "card2"
+    var cpuCard = "card3"
+    var playerScore = 0
+    var cpuScore = 0
+    
     var body: some View {
         ZStack {
             Image("background-plain")
@@ -26,9 +31,9 @@ struct ContentView: View {
     var playerAndCPUCardsView: some View {
         HStack {
             Spacer()
-            Image("card2")
+            Image(playerCard)
             Spacer()
-            Image("card3")
+            Image(cpuCard)
             Spacer()
         }
     }
@@ -36,9 +41,9 @@ struct ContentView: View {
     var playerAndCPUScoreView: some View {
         HStack {
             Spacer()
-            PlayerScoreView("Player", score: 0)
+            PlayerScoreView("Player", score: playerScore)
             Spacer()
-            PlayerScoreView("CPU", score: 0)
+            PlayerScoreView("CPU", score: cpuScore)
             Spacer()
         }
         .foregroundStyle(.white)
