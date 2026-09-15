@@ -17,38 +17,54 @@ struct ContentView: View {
             VStack(spacing: 40) {
                 Image("logo")
                 
-                HStack {
-                    Spacer()
-                    Image("card2")
-                    Spacer()
-                    Image("card3")
-                    Spacer()
-                }
+                playerAndCPUCardsView
                 
                 Button(action: { }) {
                     Image("button")
                 }
                 
-                HStack {
-                    Spacer()
-                    VStack(spacing: 20) {
-                        Text("Player")
-                        Text("0")
-                            .font(.largeTitle)
-                    }
-                    
-                    Spacer()
-                    
-                    VStack(spacing: 20) {
-                        Text("CPU")
-                        Text("0")
-                            .font(.largeTitle)
-                    }
-                    
-                    Spacer()
-                }
-                .foregroundStyle(.white)
+                playerAndCPUScoreView
             }
+        }
+    }
+    
+    var playerAndCPUCardsView: some View {
+        HStack {
+            Spacer()
+            Image("card2")
+            Spacer()
+            Image("card3")
+            Spacer()
+        }
+    }
+    
+    var playerAndCPUScoreView: some View {
+        HStack {
+            Spacer()
+            PlayerScoreView("Player", score: 0)
+            Spacer()
+            PlayerScoreView("CPU", score: 0)
+            Spacer()
+        }
+        .foregroundStyle(.white)
+    }
+}
+
+struct PlayerScoreView: View {
+    let player: String
+    let score: Int
+    
+    init(_ player: String, score: Int) {
+        self.player = player
+        self.score = score
+    }
+    
+    var body: some View {
+        VStack(spacing: 20) {
+            Text(player)
+                .font(.headline)
+            Text("\(score)")
+                .font(.largeTitle)
         }
     }
 }
