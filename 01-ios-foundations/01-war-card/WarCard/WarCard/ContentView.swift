@@ -38,6 +38,14 @@ struct ContentView: View {
             }
             
             Text("Come visit the falls for an experience of a lifetime.")
+            
+            HStack {
+                Spacer()
+                Image(systemName: "fork.knife")
+                Image(systemName: "binoculars.fill")
+            }
+            .foregroundStyle(.gray)
+            .font(.caption)
         }
         .padding()
     }
