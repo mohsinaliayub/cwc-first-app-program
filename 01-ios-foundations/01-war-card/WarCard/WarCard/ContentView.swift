@@ -59,13 +59,18 @@ struct ContentView: View {
     
     func dealCards() {
         // Randomize the player's card
+        let newPlayerCardNumber = randomCardNumber()
+        playerCard = "card" + String(newPlayerCardNumber)
         
         // Randomize the cpu's card
+        let newCPUCardNumber = randomCardNumber()
+        cpuCard = "card" + String(newCPUCardNumber)
         
         // Update the scores
     }
     
     func randomCardNumber() -> Int {
+        // We have card assets with numbers from 2 to 14.
         Int.random(in: 2...14)
     }
 }
