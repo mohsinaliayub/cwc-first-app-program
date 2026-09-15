@@ -16,15 +16,8 @@ struct ContentView: View {
             
             VStack(spacing: 40) {
                 Image("logo")
-                
                 playerAndCPUCardsView
-                
-                Button {
-                    dealCards()
-                } label: {
-                    Image("button")
-                }
-                
+                dealCardsButton
                 playerAndCPUScoreView
             }
         }
@@ -49,6 +42,14 @@ struct ContentView: View {
             Spacer()
         }
         .foregroundStyle(.white)
+    }
+    
+    var dealCardsButton: some View {
+        Button {
+            dealCards()
+        } label: {
+            Image("button")
+        }
     }
     
     func dealCards() {
