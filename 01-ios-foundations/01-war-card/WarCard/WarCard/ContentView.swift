@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var playerCard = "card7"
-    @State private var cpuCard = "card13"
+    @State private var playerCard = "back"
+    @State private var cpuCard = "back"
     @State private var playerScore = 0
     @State private var cpuScore = 0
     
