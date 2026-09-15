@@ -19,6 +19,11 @@ struct ContentView: View {
                 Text("Niagara Falls")
                     .font(.title)
                     .fontWeight(.bold)
+                
+                ForEach(1...5, id: \.self) { index in
+                    Image(systemName: index % 5 != 0 ? "star.fill" : "star.leadinghalf.filled")
+                        .foregroundStyle(.yellow)
+                }
             }
             
             Text("Come visit the falls for an experience of a lifetime.")
