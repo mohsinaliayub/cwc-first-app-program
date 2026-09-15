@@ -9,45 +9,56 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Image("niagarafalls")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+        ZStack {
+            Color.mint
+                .ignoresSafeArea()
             
-            HStack(alignment: .bottom) {
-                Text("Niagara Falls")
-                    .font(.title)
-                    .fontWeight(.bold)
+            VStack(alignment: .leading, spacing: 12) {
+                Image("niagarafalls")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 12))
                 
-                Spacer()
-                
-                VStack {
-                    HStack {
-                        ForEach(1...5, id: \.self) { index in
-                            // use half filled star as the final image
-                            let starImage = index % 5 != 0 ? "star.fill" : "star.leadinghalf.filled"
-                            Image(systemName: starImage)
-                        }
-                    }
+                HStack(alignment: .bottom) {
+                    Text("Niagara Falls")
+                        .font(.title)
+                        .fontWeight(.bold)
                     
-                    Text("(Reviews 361)")
+                    Spacer()
+                    
+                    VStack {
+                        HStack {
+                            ForEach(1...5, id: \.self) { index in
+                                // use half filled star as the final image
+                                let starImage = index % 5 != 0 ? "star.fill" : "star.leadinghalf.filled"
+                                Image(systemName: starImage)
+                            }
+                        }
+                        
+                        Text("(Reviews 361)")
+                    }
+                    .foregroundStyle(.orange)
+                    .font(.caption)
                 }
-                .foregroundStyle(.orange)
+                
+                Text("Come visit the falls for an experience of a lifetime.")
+                
+                HStack {
+                    Spacer()
+                    Image(systemName: "fork.knife")
+                    Image(systemName: "binoculars.fill")
+                }
+                .foregroundStyle(.gray)
                 .font(.caption)
             }
-            
-            Text("Come visit the falls for an experience of a lifetime.")
-            
-            HStack {
-                Spacer()
-                Image(systemName: "fork.knife")
-                Image(systemName: "binoculars.fill")
-            }
-            .foregroundStyle(.gray)
-            .font(.caption)
+            .padding()
+            .background(
+                RoundedRectangle(cornerRadius: 12)
+                    .foregroundStyle(.white)
+                    .shadow(radius: 12)
+            )
+            .padding()
         }
-        .padding()
     }
 }
 
