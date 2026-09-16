@@ -8,7 +8,9 @@
 import Foundation
 
 /// A suhsi menu item.
-struct MenuItem {
+struct MenuItem: Identifiable {
+    /// A unique identifier for each sushi item.
+    let id: UUID = .init()
     /// The name to represent the sushi dish.
     let name: String
     /// The price of sushi dish in dollars rounded to two decimal digits.

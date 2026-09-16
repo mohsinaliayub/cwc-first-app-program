@@ -24,7 +24,7 @@ struct MenuView: View {
     ]
     
     var body: some View {
-        List(menuItems, id: \.name) { item in
+        List(menuItems) { item in
             Text(item.name)
         }
     }
