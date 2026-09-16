@@ -25,8 +25,24 @@ struct MenuView: View {
     
     var body: some View {
         List(menuItems) { item in
-            Text(item.name)
+            HStack {
+                Image(item.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(height: 50)
+                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                
+                Text(item.name)
+                    .bold()
+                
+                Spacer()
+                
+                Text("$" + item.price)
+            }
+            .listRowSeparator(.hidden)
+            .listRowBackground(Color.brown.opacity(0.1))
         }
+        .listStyle(.plain)
     }
 }
 
