@@ -24,13 +24,9 @@ struct MenuView: View {
     ]
     
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        List(menuItems, id: \.name) { item in
+            Text(item.name)
         }
-        .padding()
     }
 }
 
