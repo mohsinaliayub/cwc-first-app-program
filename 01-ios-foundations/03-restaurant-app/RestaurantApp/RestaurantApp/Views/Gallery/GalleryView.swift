@@ -9,7 +9,21 @@ import SwiftUI
 
 struct GalleryView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView {
+                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+                    ForEach(1..<12) { id in
+                        Image("gallery\(id)")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                }
+                .padding()
+            }
+            .navigationTitle("Gallery")
+            .scrollIndicators(.hidden)
+        }
     }
 }
 
