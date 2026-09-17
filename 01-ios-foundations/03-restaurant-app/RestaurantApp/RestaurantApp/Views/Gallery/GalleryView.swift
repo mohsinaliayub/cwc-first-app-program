@@ -8,22 +8,32 @@
 import SwiftUI
 
 struct GalleryView: View {
+    @State private var photos: [String] = []
+    
     var body: some View {
         NavigationStack {
             ScrollView {
-                LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-                    ForEach(1..<12) { id in
-                        Image("gallery\(id)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .clipShape(RoundedRectangle(cornerRadius: 8))
-                    }
-                }
-                .padding()
+                photosGrid
             }
             .navigationTitle("Gallery")
             .scrollIndicators(.hidden)
+            .onAppear {
+                let dataService = DataService()
+                photos = dataService.fetchPhotos()
+            }
         }
+    }
+    
+    var photosGrid: some View {
+        LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
+            ForEach(photos, id: \.self) { photo in
+                Image(photo)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .clipShape(RoundedRectangle(cornerRadius: 8))
+            }
+        }
+        .padding()
     }
 }
 

@@ -25,4 +25,10 @@ struct DataService {
             MenuItem(name: "Ikura Sushi", price: "5.99", imageName: "ikura-sushi")
         ]
     }
+    
+    /// Retrives an array of image names included in the Asset catalog.
+    func fetchPhotos() -> [String] {
+        let photos = (1...11).map { "gallery\($0)" }
+        return photos
+    }
 }
