@@ -8,14 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var movies: [Movie] = []
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            
+            List(movies, id: \.id) { movie in
+                VStack {
+                    Image(movie.posterName)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
+                    Text(movie.name)
+                        .foregroundStyle(.white)
+                        .font(.headline)
+                }
+                .listRowBackground(Color.black)
+            }
+            .listStyle(.plain)
+            .padding(8)
         }
-        .padding()
+        .onAppear {
+            let dataService = DataService()
+            movies = dataService.fetchMovies()
+        }
     }
 }
 
