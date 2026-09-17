@@ -26,9 +26,9 @@ struct DataService {
         ]
     }
     
-    /// Retrives an array of image names included in the Asset catalog.
-    func fetchPhotos() -> [String] {
-        let photos = (1...11).map { "gallery\($0)" }
+    /// Retrives image names included in the Asset catalog as an array of ``GalleryItem``.
+    func fetchPhotos() -> [GalleryItem] {
+        let photos = (1...11).map { GalleryItem(imageName: "gallery\($0)") }
         return photos
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct GalleryView: View {
-    @State private var photos: [String] = []
+    @State private var galleryItems: [GalleryItem] = []
     
     var body: some View {
         NavigationStack {
@@ -19,15 +19,15 @@ struct GalleryView: View {
             .scrollIndicators(.hidden)
             .onAppear {
                 let dataService = DataService()
-                photos = dataService.fetchPhotos()
+                galleryItems = dataService.fetchPhotos()
             }
         }
     }
     
     var photosGrid: some View {
         LazyVGrid(columns: [GridItem(), GridItem(), GridItem()]) {
-            ForEach(photos, id: \.self) { photo in
-                Image(photo)
+            ForEach(galleryItems) { photo in
+                Image(photo.imageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
