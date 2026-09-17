@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a box office movie.
-struct Movie {
+struct Movie: Identifiable {
     /// A unique identifier for the movie.
     let id: UUID = .init()
     /// The release name for the movie.

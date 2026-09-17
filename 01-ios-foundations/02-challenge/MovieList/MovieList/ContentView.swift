@@ -15,20 +15,12 @@ struct ContentView: View {
             Color.black
                 .ignoresSafeArea()
             
-            List(movies, id: \.id) { movie in
-                VStack {
-                    Image(movie.posterName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .clipShape(RoundedRectangle(cornerRadius: 10))
-                    Text(movie.name)
-                        .foregroundStyle(.white)
-                        .font(.headline)
-                }
-                .listRowBackground(Color.black)
+            List(movies) { movie in
+                MovieInfoView(movie: movie)
+                    .listRowSeparator(.hidden)
+                    .listRowBackground(Color.black)
             }
             .listStyle(.plain)
-            .padding(8)
         }
         .onAppear {
             let dataService = DataService()
