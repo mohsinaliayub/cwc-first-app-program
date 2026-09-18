@@ -13,19 +13,21 @@ struct CitiesView: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack {
+                VStack(alignment: .leading, spacing: 20) {
                     ForEach(cities) { city in
                         NavigationLink {
                             CityDetailView(city: city)
                         } label: {
-                            Text(city.name)
-                                .font(.headline)
+                            CityCardView(city: city)
                         }
                     }
                 }
                 .padding()
             }
+            .scrollIndicators(.hidden)
         }
+        .ignoresSafeArea()
+        .preferredColorScheme(.dark)
         .onAppear {
             let dataService = DataService()
             cities = dataService.fetchCities()
