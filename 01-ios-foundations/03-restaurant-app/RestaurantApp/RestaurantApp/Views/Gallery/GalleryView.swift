@@ -10,6 +10,7 @@ import SwiftUI
 struct GalleryView: View {
     @State private var galleryItems: [GalleryItem] = []
     @State private var sheetVisible = false
+    @State private var selectedGalleryItem: GalleryItem? = nil
     private let columns = Array(repeating: GridItem(spacing: 10), count: 3)
     
     var body: some View {
@@ -17,9 +18,6 @@ struct GalleryView: View {
             GeometryReader { proxy in
                 ScrollView {
                     photosGrid(for: proxy.size)
-                        .onTapGesture {
-                            sheetVisible = true
-                        }
                 }
                 .navigationTitle("Gallery")
                 .scrollIndicators(.hidden)
@@ -28,7 +26,9 @@ struct GalleryView: View {
                     galleryItems = dataService.fetchPhotos()
                 }
                 .sheet(isPresented: $sheetVisible) {
-                    PhotoView(galleryItem: GalleryItem(imageName: "gallery7"))
+                    if let galleryItem = selectedGalleryItem {
+                        PhotoView(galleryItem: galleryItem)
+                    }
                 }
             }
         }
@@ -36,8 +36,13 @@ struct GalleryView: View {
     
     func photosGrid(for size: CGSize) -> some View {
         LazyVGrid(columns: columns, spacing: 10) {
-            ForEach(galleryItems) { photo in
-                resizableImage(photo.imageName, for: size)
+            ForEach(galleryItems) { galleryItem in
+                resizableImage(galleryItem.imageName, for: size)
+                    .onTapGesture {
+                        sheetVisible = true
+                        selectedGalleryItem = galleryItem
+                        print(selectedGalleryItem?.imageName ?? "PROBLEM!!!")
+                    }
             }
         }
         .padding(.horizontal)
