@@ -39,48 +39,13 @@ struct MealsView: View {
                     meals = dataService.fetchMeals()
                 }
                 .sheet(item: $selectedMeal) { meal in
-                    MealView(meal: meal)
+                    MealDetailView(meal: meal)
                 }
             }
         }
     }
 }
 
-struct MealView: View {
-    let meal: Meal
-    @Environment(\.dismiss) private var dismiss
-    
-    var body: some View {
-        ZStack(alignment: .trailing) {
-            Image(meal.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-            
-            dismissButton
-        }
-    }
-    
-    var dismissButton: some View {
-        VStack {
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "x.circle")
-                    .scaleEffect(2)
-                    .foregroundStyle(.black)
-            }
-            .padding()
-            .padding(.top)
-            
-            Spacer()
-        }
-    }
-}
-
 #Preview {
     MealsView()
-}
-
-#Preview {
-    MealView(meal: Meal(imageName: "3"))
 }
