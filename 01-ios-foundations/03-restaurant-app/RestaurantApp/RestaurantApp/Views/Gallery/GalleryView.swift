@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GalleryView: View {
     @State private var galleryItems: [GalleryItem] = []
-    @State private var sheetVisible = false
     @State private var selectedGalleryItem: GalleryItem? = nil
     private let columns = Array(repeating: GridItem(spacing: 10), count: 3)
     
@@ -25,10 +24,8 @@ struct GalleryView: View {
                     let dataService = DataService()
                     galleryItems = dataService.fetchPhotos()
                 }
-                .sheet(isPresented: $sheetVisible) {
-                    if let galleryItem = selectedGalleryItem {
-                        PhotoView(galleryItem: galleryItem)
-                    }
+                .sheet(item: $selectedGalleryItem) { galleryItem in
+                    PhotoView(galleryItem: galleryItem)
                 }
             }
         }
@@ -39,9 +36,7 @@ struct GalleryView: View {
             ForEach(galleryItems) { galleryItem in
                 resizableImage(galleryItem.imageName, for: size)
                     .onTapGesture {
-                        sheetVisible = true
                         selectedGalleryItem = galleryItem
-                        print(selectedGalleryItem?.imageName ?? "PROBLEM!!!")
                     }
             }
         }
