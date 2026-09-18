@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CitiesView.swift
 //  Guidebook
 //
 //  Created by Mohsin Ali Ayub on 18.09.26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CitiesView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CitiesView()
 }
