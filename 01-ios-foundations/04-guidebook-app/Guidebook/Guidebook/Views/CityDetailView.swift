@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct CityDetailView: View {
+    let city: City
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            VStack {
+                ForEach(city.attractions) { attraction in
+                    NavigationLink {
+                        AttractionView(attraction: attraction)
+                    } label: {
+                        Text(attraction.name)
+                            .font(.headline)
+                    }
+                }
+            }
+        }
     }
 }
 
 #Preview {
-    CityDetailView()
+    CityDetailView(city: DataService.fetchPreviewCity())
 }

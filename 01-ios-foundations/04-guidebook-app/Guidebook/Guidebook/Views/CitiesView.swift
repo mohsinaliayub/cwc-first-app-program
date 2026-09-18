@@ -11,13 +11,20 @@ struct CitiesView: View {
     @State private var cities: [City] = []
     
     var body: some View {
-        ScrollView {
-            VStack {
-                ForEach(cities) { city in
-                    Text(city.name)
+        NavigationStack {
+            ScrollView {
+                VStack {
+                    ForEach(cities) { city in
+                        NavigationLink {
+                            CityDetailView(city: city)
+                        } label: {
+                            Text(city.name)
+                                .font(.headline)
+                        }
+                    }
                 }
+                .padding()
             }
-            .padding()
         }
         .onAppear {
             let dataService = DataService()

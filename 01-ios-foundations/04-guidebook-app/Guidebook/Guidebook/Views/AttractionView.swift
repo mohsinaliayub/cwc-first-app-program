@@ -8,11 +8,22 @@
 import SwiftUI
 
 struct AttractionView: View {
+    let attraction: Attraction
+    
     var body: some View {
-        Text("Hello, World!")
+        ScrollView {
+            VStack(alignment: .leading) {
+                Image(attraction.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                Text(attraction.name)
+            }
+            .padding()
+        }
     }
 }
 
 #Preview {
-    AttractionView()
+    let attraction = DataService.fetchPreviewCity().attractions[0]
+    AttractionView(attraction: attraction)
 }
