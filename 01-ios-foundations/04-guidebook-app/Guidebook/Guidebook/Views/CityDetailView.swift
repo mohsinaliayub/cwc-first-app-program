@@ -12,17 +12,22 @@ struct CityDetailView: View {
     
     var body: some View {
         ScrollView {
-            VStack {
+            VStack(alignment: .leading, spacing: 40) {
                 ForEach(city.attractions) { attraction in
                     NavigationLink {
                         AttractionView(attraction: attraction)
                     } label: {
-                        Text(attraction.name)
-                            .font(.headline)
+                        AttractionRow(attraction: attraction)
                     }
+                    .buttonStyle(.plain)
                 }
             }
+            .padding(.horizontal)
         }
+        .scrollIndicators(.hidden)
+        .preferredColorScheme(.dark)
+        .navigationTitle(city.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
