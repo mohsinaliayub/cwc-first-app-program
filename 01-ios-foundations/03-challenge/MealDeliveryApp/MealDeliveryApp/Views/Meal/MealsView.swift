@@ -14,12 +14,15 @@ struct MealsView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { proxy in
+                let width = proxy.size.width
+                
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 12) {
                         ForEach(meals) { meal in
                             Image(meal.imageName)
                                 .resizable()
-                                .aspectRatio(contentMode: .fit)
+                                .aspectRatio(2/1.5, contentMode: .fill)
+                                .frame(maxWidth: width > 0 ? (width - 44) / 2 : .zero)
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
                     }
