@@ -9,6 +9,7 @@ import SwiftUI
 
 struct GalleryView: View {
     @State private var galleryItems: [GalleryItem] = []
+    @State private var sheetVisible = false
     private let columns = Array(repeating: GridItem(spacing: 10), count: 3)
     
     var body: some View {
@@ -16,12 +17,18 @@ struct GalleryView: View {
             GeometryReader { proxy in
                 ScrollView {
                     photosGrid(for: proxy.size)
+                        .onTapGesture {
+                            sheetVisible = true
+                        }
                 }
                 .navigationTitle("Gallery")
                 .scrollIndicators(.hidden)
                 .onAppear {
                     let dataService = DataService()
                     galleryItems = dataService.fetchPhotos()
+                }
+                .sheet(isPresented: $sheetVisible) {
+                    PhotoView(galleryItem: GalleryItem(imageName: "gallery7"))
                 }
             }
         }
