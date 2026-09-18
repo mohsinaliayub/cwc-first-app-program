@@ -53,7 +53,7 @@ struct GalleryView: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             // remove 2*16=>32 (horizontal padding) and 2*10=>20 (spacing) from width
-            .frame(maxWidth: (size.width - 52) / 3)
+            .frame(maxWidth: size.width > 0 ? (size.width - 52) / 3 : .zero)
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }
