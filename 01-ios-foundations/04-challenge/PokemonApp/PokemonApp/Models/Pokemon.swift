@@ -14,18 +14,19 @@ struct Pokemon: Identifiable, Decodable {
     /// The original name of the pokemon.
     let name: String
     /// A short summary of the pokemon.
-    let about: String
+    let summary: String
+    /// Total health points of the pokemon.
     let hp: Int
-    let atk: Int
-    let def: Int
-    let spatk: Int
-    let spdef: Int
-    let spd: Int
+    let attack: Int
+    let defense: Int
+    let specialAttack: Int
+    let specialDefense: Int
+    let speed: Int
     /// The name of the image included in the Assets catalog.
     let imageName: String
     
     enum CodingKeys: String, CodingKey {
-        case name, about, hp, atk, def, spatk, spdef, spd
-        case imageName = "image"
+        case name, summary = "about", hp, attack = "atk", defense = "def", specialAttack = "spatk"
+        case specialDefense = "spdef", speed = "spd", imageName = "image"
     }
 }
