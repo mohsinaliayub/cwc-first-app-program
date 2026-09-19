@@ -36,6 +36,17 @@ struct AttractionView: View {
             .ignoresSafeArea()
         }
     }
+    
+    /// Replace spaces with '+' symbol and remove any diacritics.
+    private func cleanName(_ name: String) -> String {
+        name.replacingOccurrences(of: " ", with: "+")
+            .folding(options: .diacriticInsensitive, locale: .current)
+    }
+    
+    /// Remove unneeded space characters.
+    private func cleanCoordinates(_ coordinateString: String) -> String {
+        coordinateString.replacingOccurrences(of: " ", with: "")
+    }
 }
 
 #Preview {
