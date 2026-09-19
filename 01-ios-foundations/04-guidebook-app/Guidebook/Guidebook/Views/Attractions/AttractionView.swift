@@ -27,8 +27,10 @@ struct AttractionView: View {
                         Text(attraction.longDescription)
                             .multilineTextAlignment(.leading)
                         
-                        getDirectionsButton
-                            .padding(.top)
+                        if canOpenMap(for: mapURL(for: attraction)) {
+                            getDirectionsButton
+                                .padding(.top)
+                        }
                     }
                     .frame(maxWidth: proxy.size.width)
                     .padding(.bottom, 30)
@@ -42,7 +44,7 @@ struct AttractionView: View {
     
     private var getDirectionsButton: some View {
         Button {
-            //openMap(for: attraction)
+            openMap(for: attraction)
         } label: {
             RoundedRectangle(cornerRadius: 15)
                 .foregroundStyle(.blue)
@@ -52,6 +54,34 @@ struct AttractionView: View {
                         .foregroundStyle(.white)
                 }
         }
+    }
+    
+    func openMap(for attraction: Attraction) {
+        // Create URL instance based on maps URL scheme.
+        let url = mapURL(for: attraction)
+        
+        // Check if URL can be opened.
+        guard canOpenMap(for: url) else { return }
+        
+        // Open the URL
+        UIApplication.shared.open(url!)  // we checked that this URL can be opened, so force unwrapping.
+    }
+    
+    /// Create a URL to be opened by an iPhone Maps application.
+    func mapURL(for attraction: Attraction) -> URL? {
+        let attractionName = cleanName(attraction.name)
+        let latLong = cleanCoordinates(attraction.latLong)
+        
+        let urlScheme = "maps://?q=\(attractionName)&sll=\(latLong)&z=10&t=s"
+        return URL(string: urlScheme)
+    }
+    
+    /// Check if the Maps application can be opened for provided URL.
+    private func canOpenMap(for url: URL?) -> Bool {
+        // If the URL isn't valid, return false.
+        guard let url else { return false }
+        
+        return UIApplication.shared.canOpenURL(url)
     }
     
     /// Replace spaces with '+' symbol and remove any diacritics.
