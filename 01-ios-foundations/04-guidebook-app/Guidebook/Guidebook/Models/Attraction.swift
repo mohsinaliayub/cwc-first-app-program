@@ -8,7 +8,7 @@
 import Foundation
 
 /// A geographical attraction for tourists.
-struct Attraction: Identifiable {
+struct Attraction: Identifiable, Decodable {
     /// Unique identifier for the attraction.
     let id: UUID = .init()
     /// The original name of the attraction.
@@ -21,4 +21,9 @@ struct Attraction: Identifiable {
     let imageName: String
     /// The geographical latitude and longitude of the attraction.
     let latLong: String
+    
+    
+    enum CodingKeys: CodingKey {
+        case name, summary, longDescription, imageName, latLong
+    }
 }

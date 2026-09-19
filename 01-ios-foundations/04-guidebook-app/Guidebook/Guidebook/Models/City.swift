@@ -8,7 +8,7 @@
 import Foundation
 
 /// Represents a geographical city.
-struct City: Identifiable {
+struct City: Identifiable, Decodable {
     /// A unique identifier for city.
     let id: UUID = .init()
     /// The name of geographical city.
@@ -19,4 +19,9 @@ struct City: Identifiable {
     let imageName: String
     /// An array of attractions available in the city.
     let attractions: [Attraction]
+    
+    
+    enum CodingKeys: CodingKey {
+        case name, summary, imageName, attractions
+    }
 }
