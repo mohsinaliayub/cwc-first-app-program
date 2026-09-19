@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CategoriesView.swift
 //  PokemonApp
 //
 //  Created by Mohsin Ali Ayub on 19.09.26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct CategoriesView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    CategoriesView()
 }
