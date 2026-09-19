@@ -26,6 +26,9 @@ struct AttractionView: View {
                             .bold()
                         Text(attraction.longDescription)
                             .multilineTextAlignment(.leading)
+                        
+                        getDirectionsButton
+                            .padding(.top)
                     }
                     .frame(maxWidth: proxy.size.width)
                     .padding(.bottom, 30)
@@ -34,6 +37,20 @@ struct AttractionView: View {
                 .scrollIndicators(.hidden)
             }
             .ignoresSafeArea()
+        }
+    }
+    
+    private var getDirectionsButton: some View {
+        Button {
+            //openMap(for: attraction)
+        } label: {
+            RoundedRectangle(cornerRadius: 15)
+                .foregroundStyle(.blue)
+                .frame(height: 48)
+                .overlay {
+                    Text("Get Directions")
+                        .foregroundStyle(.white)
+                }
         }
     }
     
