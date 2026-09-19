@@ -1,0 +1,200 @@
+
+[
+    {
+        "type": "Electric",
+        "pokemon":[
+            {
+                "name":"Pikachu",
+                "about":"When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+                "hp": 3,
+                "atk": 4,
+                "def": 3,
+                "spatk": 3,
+                "spdef": 3,
+                "spd": 6,
+                "image": "electric-pikachu"
+            },
+            {
+                "name":"Chinchou",
+                "about": "It lives in ocean depths beyond the reach of sunlight. It flashes lights on its antennae to communicate with others of its kind.",
+                "hp": 5,
+                "atk": 3,
+                "def": 3,
+                "spatk": 4,
+                "spdef": 4,
+                "spd": 4,
+                "image": "electric-chinchou"
+            },
+            {
+                "name":"Zapdos",
+                "about":"This legendary Pokémon is said to live in thunderclouds. It freely controls lightning bolts.",
+                "hp": 6,
+                "atk": 6,
+                "def": 5,
+                "spatk": 8,
+                "spdef": 6,
+                "spd": 6,
+                "image": "electric-zapdos"
+            },
+            {
+                "name":"Jolteon",
+                "about":"It concentrates the weak electric charges emitted by its cells and launches wicked lightning bolts.",
+                "hp": 4,
+                "atk": 4,
+                "def": 4,
+                "spatk": 6,
+                "spdef": 5,
+                "spd": 7,
+                "image": "electric-jolteon"
+            }
+            
+        ]
+    },
+    {
+        "type": "Grass",
+        "pokemon":[
+            {
+                "name":"Bulbasaur",
+                "about":"For some time after its birth, it uses the nutrients that are packed into the seed on its back in order to grow.",
+                "hp": 3,
+                "atk": 3,
+                "def": 3,
+                "spatk": 4,
+                "spdef": 4,
+                "spd": 3,
+                "image": "grass-bulbasaur"
+            },
+            {
+                "name":"Oddish",
+                "about":"Its scientific name is Oddium wanderus. It is said to cover distances as far as 1,000 feet when night falls, walking on its two roots.",
+                "hp": 3,
+                "atk": 3,
+                "def": 4,
+                "spatk": 5,
+                "spdef": 4,
+                "spd": 2,
+                "image": "grass-oddish"
+            },
+            {
+                "name":"Jumpluff",
+                "about":"Jumpluff travels on seasonal winds. Once its cotton spores run out, its journey ends, as does its life.",
+                "hp": 5,
+                "atk": 4,
+                "def": 5,
+                "spatk": 4,
+                "spdef": 6,
+                "spd": 7,
+                "image": "grass-jumpluff"
+            },
+            {
+                "name":"Leafeon",
+                "about":"When you see Leafeon asleep in a patch of sunshine, you’ll know it is using photosynthesis to produce clean air.",
+                "hp": 4,
+                "atk": 7,
+                "def": 8,
+                "spatk": 4,
+                "spdef": 4,
+                "spd": 6,
+                "image": "grass-leafeon"
+            }
+        ]
+    },
+    {
+        "type": "Fire",
+        "pokemon":[
+            {
+                "name":"Charmander",
+                "about":"The flame on its tail shows the strength of its life-force. If Charmander is weak, the flame also burns weakly.",
+                "hp": 3,
+                "atk": 4,
+                "def": 3,
+                "spatk": 4,
+                "spdef": 3,
+                "spd": 4,
+                "image": "fire-charmander"
+            },
+            {
+                "name":"Entei",
+                "about":"Entei embodies the passion of magma. This Pokémon is thought to have been born in the eruption of a volcano. It sends up massive bursts of fire that utterly consume all that they touch.",
+                "hp": 7,
+                "atk": 7,
+                "def": 5,
+                "spatk": 6,
+                "spdef": 5,
+                "spd": 6,
+                "image": "fire-entei"
+            },
+            {
+                "name":"Chimchar",
+                "about":"It is very agile. Before going to sleep, it extinguishes the flame on its tail to prevent fires.",
+                "hp": 3,
+                "atk": 4,
+                "def": 3,
+                "spatk": 4,
+                "spdef": 3,
+                "spd": 4,
+                "image": "fire-chimchar"
+            },
+            {
+                "name":"Ponyta",
+                "about":"About an hour after birth, Ponyta’s fiery mane and tail grow out, giving the Pokémon an impressive appearance.",
+                "hp": 3,
+                "atk": 5,
+                "def": 4,
+                "spatk": 4,
+                "spdef": 4,
+                "spd": 7,
+                "image": "fire-ponyta"
+            }
+        ]
+    },
+    {
+        "type": "Water",
+        "pokemon":[
+            {
+                "name":"Squirtle",
+                "about":"After birth, its back swells and hardens into a shell. It sprays a potent foam from its mouth.",
+                "hp": 3,
+                "atk": 3,
+                "def": 4,
+                "spatk": 3,
+                "spdef": 4,
+                "spd": 3,
+                "image": "water-squirtle"
+            },
+            {
+                "name":"Psyduck",
+                "about":"It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.",
+                "hp": 3,
+                "atk": 4,
+                "def": 3,
+                "spatk": 4,
+                "spdef": 3,
+                "spd": 4,
+                "image": "water-psyduck"
+            },
+            {
+                "name":"Vaporeon",
+                "about":"It lives close to water. Its long tail is ridged with a fin, which is often mistaken for a mermaid's.",
+                "hp": 8,
+                "atk": 4,
+                "def": 4,
+                "spatk": 7,
+                "spdef": 6,
+                "spd": 4,
+                "image": "water-vaporeon"
+            },
+            {
+                "name":"Magikarp",
+                "about":"An underpowered, pathetic Pokémon. It may jump high on rare occasions but never more than seven feet.",
+                "hp": 2,
+                "atk": 1,
+                "def": 4,
+                "spatk": 1,
+                "spdef": 2,
+                "spd": 5,
+                "image": "water-magikarp"
+            }
+        ]
+    }
+]
