@@ -15,7 +15,11 @@ struct PokemonsView: View {
         ScrollView {
             LazyVGrid(columns: columns) {
                 ForEach(category.pokemons) { pokemon in
-                    image(for: pokemon)
+                    NavigationLink {
+                        PokemonDetailView(pokemon: pokemon)
+                    } label: {
+                        image(for: pokemon)
+                    }
                 }
             }
         }
