@@ -28,8 +28,12 @@ struct CategoriesView: View {
     private var categoriesView: some View {
         VStack(spacing: 12) {
             ForEach(pokemonCategories) { category in
-                CategoryRow(for: category)
-                    .foregroundStyle(.black)
+                NavigationLink {
+                    PokemonsView(category: category)
+                } label: {
+                    CategoryRow(for: category)
+                        .foregroundStyle(.black)
+                }
             }
         }
     }
