@@ -13,7 +13,7 @@ struct PokemonsView: View {
     
     var body: some View {
         ScrollView {
-            LazyVGrid(columns: columns) {
+            LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(category.pokemons) { pokemon in
                     NavigationLink {
                         PokemonDetailView(pokemon: pokemon)
@@ -23,6 +23,7 @@ struct PokemonsView: View {
                 }
             }
         }
+        .scrollIndicators(.hidden)
         .navigationTitle(category.name)
     }
     
