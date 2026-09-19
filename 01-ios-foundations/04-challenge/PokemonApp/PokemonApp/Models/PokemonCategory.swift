@@ -17,6 +17,6 @@ struct PokemonCategory: Identifiable, Decodable {
     let pokemons: [Pokemon]
     
     enum CodingKeys: String, CodingKey {
-        case name, pokemons = "pokemon"
+        case name = "type", pokemons = "pokemon"
     }
 }

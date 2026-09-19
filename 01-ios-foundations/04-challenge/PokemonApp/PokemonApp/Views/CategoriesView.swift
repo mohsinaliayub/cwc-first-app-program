@@ -16,6 +16,11 @@ struct CategoriesView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            let dataService = DataService()
+            let categories = dataService.fetchPokemonCategories()
+            print(categories.count)
+        }
     }
 }
 
