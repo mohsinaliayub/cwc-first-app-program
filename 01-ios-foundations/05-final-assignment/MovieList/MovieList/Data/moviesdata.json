@@ -1,0 +1,215 @@
+[
+    {
+        "id":402431,
+        "title":"Wicked",
+        "overview":"In the land of Oz, ostracized and misunderstood green-skinned Elphaba is forced to share a room with the popular aristocrat Glinda at Shiz University, and the two's unlikely friendship is tested as they begin to fulfill their respective destinies as Glinda the Good and the Wicked Witch of the West.",
+        "poster_path":"wicked",
+        "genres":[
+            {
+                "id": 18,
+                "name": "Drama"
+            },
+            {
+                "id": 10749,
+                "name": "Romance"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+        ],
+        "release_date":"2024-11-20",
+        "vote_average":7.239,
+    },
+    {
+        "id":823219,
+        "title":"Flow",
+        "overview":"A solitary cat, displaced by a great flood, finds refuge on a boat with various species and must navigate the challenges of adapting to a transformed world together.",
+        "poster_path":"flow",
+        "genres":[
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+            {
+                "id": 16,
+                "name": "Animation"
+            }
+        ],
+        "release_date":"2024-01-30",
+        "vote_average":8.4,
+    },
+    {
+        "id":1261501,
+        "title":"Ad Vitam",
+        "overview":"When he and his pregnant wife are attacked in their home, a former elite agent becomes trapped in a deadly manhunt tied to his own painful past.",
+        "poster_path":"vitam",
+        "genres":[
+            {
+                "id": 18,
+                "name": "Drama"
+            },
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 53,
+                "name": "Thriller"
+            },
+            {
+                "id": 80,
+                "name": "Crime"
+            }
+        ],
+        "release_date":"2025-01-09",
+        "vote_average":6.119,
+    },
+    {
+        "id":426063,
+        "title":"Nosferatu",
+        "overview":"A gothic tale of obsession between a haunted young woman and the terrifying vampire infatuated with her, causing untold horror in its wake.",
+        "poster_path":"nosferatu",
+        "genres":[
+            {
+                "id": 14,
+                "name": "Fantasy"
+            },
+            {
+                "id": 18,
+                "name": "Drama"
+            },
+            {
+                "id": 27,
+                "name": "Horror"
+            }
+        ],
+        "release_date":"2024-12-25",
+        "vote_average":6.833,
+    },
+    {
+        "id":939243,
+        "title":"Sonic the Hedgehog 3",
+        "overview":"Sonic, Knuckles, and Tails reunite against a powerful new adversary, Shadow, a mysterious villain with powers unlike anything they have faced before. With their abilities outmatched in every way, Team Sonic must seek out an unlikely alliance in hopes of stopping Shadow and protecting the planet.",
+        "poster_path":"sonic3",
+        "genres":[
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 878,
+                "name": "Science Fiction"
+            },
+            {
+                "id": 35,
+                "name": "Comedy"
+            },
+            {
+                "id": 10751,
+                "name": "Family"
+            }
+        ],
+        "release_date":"2024-12-19",
+        "video":false,
+        "vote_average":7.6,
+    },
+    {
+        "id":912649,
+        "title":"Venom: The Last Dance",
+        "overview":"Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+        "poster_path":"venom3",
+        "genres":[
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 878,
+                "name": "Science Fiction"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            }
+        ],
+        "release_date":"2024-10-22",
+        "vote_average":6.816,
+    },
+    {
+        "id":1088514,
+        "title":"The Room Next Door",
+        "overview":"Ingrid and Martha were close friends in their youth, when they worked together at the same magazine. Ingrid went on to become an autofiction novelist while Martha became a war reporter, and they were separated by the circumstances of life. After years of being out of touch, they meet again in an extreme but strangely sweet situation.",
+        "poster_path":"room-next",
+        "genres":[
+            {
+                "id": 18,
+                "name": "Drama"
+            }
+        ],
+        "release_date":"2024-10-07",
+        "vote_average":7.2,
+    },
+    {
+        "id":558449,
+        "title":"Gladiator II",
+        "overview":"Years after witnessing the death of the revered hero Maximus at the hands of his uncle, Lucius is forced to enter the Colosseum after his home is conquered by the tyrannical Emperors who now lead Rome with an iron fist. With rage in his heart and the future of the Empire at stake, Lucius must look to his past to find strength and honor to return the glory of Rome to its people.",
+        "poster_path":"gladiator2",
+        "genres":[
+            {
+                "id": 28,
+                "name": "Action"
+            },
+            {
+                "id": 12,
+                "name": "Adventure"
+            },
+            {
+                "id": 18,
+                "name": "Drama"
+            }
+        ],
+        "release_date":"2024-11-05",
+        "vote_average":6.766,
+    },
+    {
+        "id":933260,
+        "title":"The Substance",
+        "overview":"A fading celebrity decides to use a black market drug, a cell-replicating substance that temporarily creates a younger, better version of herself.",
+        "poster_path":"substance",
+        "genres":[
+            {
+                "id": 27,
+                "name": "Horror"
+            },
+            {
+                "id": 878,
+                "name": "Science Fiction"
+            }
+        ],
+        "release_date":"2024-09-07",
+        "vote_average":7.1,
+    },
+    {
+        "id":1013850,
+        "title":"A Real Pain",
+        "overview":"Mismatched cousins David and Benji reunite for a tour through Poland to honor their beloved grandmother. The adventure takes a turn when the pair's old tensions resurface against the backdrop of their family history.",
+        "poster_path":"pain",
+        "genres":[
+            {
+                "id": 35,
+                "name": "Comedy"
+            },
+            {
+                "id": 18,
+                "name": "Drama"
+            }
+        ],
+        "release_date":"2024-11-01",
+        "vote_average":6.7,
+    }
+]
