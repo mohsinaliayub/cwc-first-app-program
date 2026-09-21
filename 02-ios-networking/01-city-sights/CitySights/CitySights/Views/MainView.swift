@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State private var query = ""
+    @State private var businesses: [Business] = []
     
     var body: some View {
         HStack {
@@ -18,7 +19,8 @@ struct MainView: View {
                 // TODO: Implement query search
                 Task {
                     let dataService = DataService()
-                    await dataService.searchRestaurants()
+                    businesses = await dataService.searchRestaurants()
+                    print(businesses.count)
                 }
             } label: {
                 Text("Go")

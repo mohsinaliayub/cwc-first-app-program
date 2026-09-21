@@ -13,12 +13,12 @@ struct DataService {
     private let longitude = 139.770398
     
     /// Search local restaurants based on your location.
-    func searchRestaurants() async {
+    func searchRestaurants() async -> [Business] {
         // If api key doesn't exist, return.
-        guard let apiKey else { return }
+        guard let apiKey else { return [] }
         
         guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
-            return
+            return []
         }
         
         // Create URL Request
@@ -31,13 +31,15 @@ struct DataService {
             let (data, response) = try await URLSession.shared.data(for: request)
             
             // Check if response is successful
-            guard (response as? HTTPURLResponse)?.statusCode == 200 else { return }
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else { return [] }
             
             // Parse the JSON data
             let businessSearch = try JSONDecoder().decode(BusinessSearch.self, from: data)
-            print(businessSearch.businesses.count)
+            return businessSearch.businesses
         } catch {
             print(error)
         }
+        
+        return []
     }
 }
