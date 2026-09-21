@@ -7,11 +7,16 @@
 
 import Foundation
 
+/// The origin of the location described with a set of latitude and longitude.
 struct Region: Decodable {
-    let center: Coordinate?
+    /// The origin of the location.
+    let center: Coordinate
 }
 
+/// The latitude and longitude associated with a location.
 struct Coordinate: Decodable {
-    let latitude: Double?
-    let longitude: Double?
+    /// The latitude in degrees.
+    let latitude: Double
+    /// The longitude in degrees.
+    let longitude: Double
 }
