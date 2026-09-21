@@ -21,6 +21,10 @@ struct MainView: View {
             }
         }
         .padding()
+        .task {
+            let dataService = DataService()
+            await dataService.searchRestaurants()
+        }
     }
 }
 
