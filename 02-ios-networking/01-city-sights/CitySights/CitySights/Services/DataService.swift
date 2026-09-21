@@ -34,7 +34,8 @@ struct DataService {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { return }
             
             // Parse the JSON data
-            print(data)
+            let businessSearch = try JSONDecoder().decode(BusinessSearch.self, from: data)
+            print(businessSearch.businesses.count)
         } catch {
             print(error)
         }
