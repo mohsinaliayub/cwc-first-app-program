@@ -14,7 +14,7 @@
 		429E071E3061760D003E37EE /* Exceptions for "CitySights" folder in "CitySights" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 4255ACA2306151C10062FCC8 /* CitySights */;
 		};
@@ -273,7 +273,7 @@
 				DEVELOPMENT_TEAM = 54L66DHDVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CitySights/Info.plist;
+				INFOPLIST_FILE = CitySights/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -306,7 +306,7 @@
 				DEVELOPMENT_TEAM = 54L66DHDVH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CitySights/Info.plist;
+				INFOPLIST_FILE = CitySights/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
