@@ -16,15 +16,15 @@ struct MainView: View {
                 .textFieldStyle(.roundedBorder)
             Button {
                 // TODO: Implement query search
+                Task {
+                    let dataService = DataService()
+                    await dataService.searchRestaurants()
+                }
             } label: {
                 Text("Go")
             }
         }
         .padding()
-        .task {
-            let dataService = DataService()
-            await dataService.searchRestaurants()
-        }
     }
 }
 
