@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var query = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        HStack {
+            TextField("What're you looking for?", text: $query)
+                .textFieldStyle(.roundedBorder)
+            Button {
+                // TODO: Implement query search
+            } label: {
+                Text("Go")
+            }
         }
         .padding()
     }
