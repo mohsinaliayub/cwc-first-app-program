@@ -7,7 +7,12 @@
 
 import Foundation
 
+/// Category to filter the search results with.
 struct Category: Decodable {
-    let alias: String?
-    let title: String?
+    /// The alias for the category..
+    ///
+    /// Its is always represented in small letters with no spaces (e.g. "discgolf", not "Disc Golf").
+    let alias: String
+    /// The renowned name for the category.
+    let title: String
 }
