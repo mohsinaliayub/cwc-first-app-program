@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @State private var query = ""
     @State private var businesses: [Business] = []
+    @State private var selectedBusiness: Business?
     private let dataService = DataService()
     
     var body: some View {
@@ -20,6 +21,9 @@ struct MainView: View {
         .padding()
         .task {
             businesses = await dataService.searchRestaurants()
+        }
+        .sheet(item: $selectedBusiness) { business in
+            BusinessDetailView(business: business)
         }
     }
     
@@ -39,24 +43,10 @@ struct MainView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
                 ForEach(businesses) { business in
-                    VStack {
-                        HStack(alignment: .top) {
-                            Image("list-placeholder-image")
-                                .padding(.trailing, 4)
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
-                                    .font(.subheadline)
-                                    .fontWeight(.semibold)
-                                    .lineLimit(1)
-                                Text(TextHelper.distanceAwayText(meters: business.distance ?? 0))
-                                    .font(.system(size: 16))
-                                    .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
-                            }
-                            Spacer()
-                            Image("regular_\(business.rating ?? 0)")
+                    BusinessInfoRow(business: business)
+                        .onTapGesture {
+                            selectedBusiness = business
                         }
-                        Divider()
-                    }
                 }
             }
             .padding(.top, 12)
@@ -64,6 +54,32 @@ struct MainView: View {
         .scrollIndicators(.hidden)
     }
 }
+
+struct BusinessInfoRow: View {
+    let business: Business
+    
+    var body: some View {
+        VStack {
+            HStack(alignment: .top) {
+                Image("list-placeholder-image")
+                    .padding(.trailing, 4)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
+                        .font(.subheadline)
+                        .fontWeight(.semibold)
+                        .lineLimit(1)
+                    Text(TextHelper.distanceAwayText(meters: business.distance ?? 0))
+                        .font(.system(size: 16))
+                        .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
+                }
+                Spacer()
+                Image("regular_\(business.rating ?? 0)")
+            }
+            Divider()
+        }
+    }
+}
+
 
 #Preview {
     MainView()
