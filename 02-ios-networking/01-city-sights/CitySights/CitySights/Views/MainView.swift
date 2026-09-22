@@ -14,9 +14,10 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            searchBar.padding(.horizontal)
+            searchBar
             businessesListView
         }
+        .padding()
         .task {
             businesses = await dataService.searchRestaurants()
         }
@@ -35,26 +36,30 @@ struct MainView: View {
     }
     
     private var businessesListView: some View {
-        List(businesses) { business in
-            VStack {
-                HStack(alignment: .top) {
-                    Image("list-placeholder-image")
-                    VStack(alignment: .leading) {
-                        Text(business.name)
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                        Text("Distance")
-                            .font(.system(size: 16))
-                            .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 12) {
+                ForEach(businesses) { business in
+                    VStack {
+                        HStack(alignment: .top) {
+                            Image("list-placeholder-image")
+                                .padding(.trailing, 4)
+                            VStack(alignment: .leading) {
+                                Text(business.name)
+                                    .font(.subheadline)
+                                    .fontWeight(.semibold)
+                                Text("Distance")
+                                    .font(.system(size: 16))
+                                    .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
+                            }
+                            Spacer()
+                            Image("regular_\(business.rating ?? 0)")
+                        }
+                        Divider()
                     }
-                    Spacer()
-                    Image("regular_\(business.rating ?? 0)")
                 }
-                Divider()
             }
-            .listRowSeparator(.hidden)
         }
-        .listStyle(.plain)
+        .scrollIndicators(.hidden)
     }
 }
 
