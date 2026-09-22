@@ -1,0 +1,1145 @@
+{
+  "businesses": [
+    {
+      "id": "JBshEJkHZTckKdDPPdqbCg",
+      "alias": "築地すし鮑-中央区",
+      "name": " Tsukiji Sushi Hou",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/9xATLTWRXkpqSZRTUcFD8A/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E7%AF%89%E5%9C%B0%E3%81%99%E3%81%97%E9%AE%91-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "sushi",
+          "title": "Sushi Bars"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 35.6645660400391,
+        "longitude": 139.771484375
+      },
+      "transactions": [],
+      "location": {
+        "address1": "築地6-24-8",
+        "address2": "",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0045",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "築地6-24-8",
+          "Chūō, 東京都 〒104-0045",
+          "Japan"
+        ]
+      },
+      "phone": "+81362642990",
+      "display_phone": "+81 3-6264-2990",
+      "distance": 143.6847969717259,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2300",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2300",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2300",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2300",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2300",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1200",
+              "end": "1500",
+              "day": 6
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "2100",
+              "day": 6
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "1BLkHrjf9p2nUbsLG3PjEA",
+      "alias": "喫茶マコ-中央区",
+      "name": "Kissa Mako",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/GjQkDQMJZeOXMJYnbTnnDQ/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E5%96%AB%E8%8C%B6%E3%83%9E%E3%82%B3-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "japanese",
+          "title": "Japanese"
+        },
+        {
+          "alias": "cafes",
+          "title": "Cafes"
+        }
+      ],
+      "rating": 3,
+      "coordinates": {
+        "latitude": 35.6656093,
+        "longitude": 139.7699422
+      },
+      "transactions": [],
+      "location": {
+        "address1": "築地4-9-7",
+        "address2": "中富ビル 2F",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0045",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "築地4-9-7",
+          "中富ビル 2F",
+          "Chūō, 東京都 〒104-0045",
+          "Japan"
+        ]
+      },
+      "phone": "+81335410502",
+      "display_phone": "+81 3-3541-0502",
+      "distance": 42.43606725147473,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1030",
+              "end": "1500",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": false
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "A6lKeIs7SqBBDsJkby3APQ",
+      "alias": "文化人-中央区",
+      "name": "Bunkajin",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/ebqdWGHc4Kc9iV1o13_jwg/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E6%96%87%E5%8C%96%E4%BA%BA-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "soba",
+          "title": "Soba"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 35.6684417724609,
+        "longitude": 139.770065307617
+      },
+      "transactions": [],
+      "location": {
+        "address1": "築地1-12-16",
+        "address2": "",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0045",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "築地1-12-16",
+          "Chūō, 東京都 〒104-0045",
+          "Japan"
+        ]
+      },
+      "phone": "+81362284293",
+      "display_phone": "+81 3-6228-4293",
+      "distance": 327.49664298031,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1330",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1330",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1330",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1330",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1330",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "uNYYdODSEG8q2SnC99b7Bg",
+      "alias": "長崎街道-港区",
+      "name": "Nagasakikaidō",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/bAZ3Hy1im63z2SRntj3D_A/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E9%95%B7%E5%B4%8E%E8%A1%97%E9%81%93-%E6%B8%AF%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 3,
+      "categories": [
+        {
+          "alias": "izakaya",
+          "title": "Izakaya"
+        }
+      ],
+      "rating": 4.3,
+      "coordinates": {
+        "latitude": 35.6657301457563,
+        "longitude": 139.756084329892
+      },
+      "transactions": [],
+      "price": "￥",
+      "location": {
+        "address1": "港区新橋3-13-8",
+        "address2": "",
+        "address3": "",
+        "city": "Minato",
+        "zip_code": "105-0004",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "港区新橋3-13-8",
+          "Minato, 東京都 〒105-0004",
+          "Japan"
+        ]
+      },
+      "phone": "+81334328739",
+      "display_phone": "+81 3-3432-8739",
+      "distance": 1293.2909928217161,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1700",
+              "end": "0000",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "1ipQWk97UQdHNUEZIGRWow",
+      "alias": "たまさか-銀座店-港区",
+      "name": "Tamasaka Ginza",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/Ugaef1YKKeY5Isq6zryI4Q/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E3%81%9F%E3%81%BE%E3%81%95%E3%81%8B-%E9%8A%80%E5%BA%A7%E5%BA%97-%E6%B8%AF%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "kaiseki",
+          "title": "Kaiseki"
+        },
+        {
+          "alias": "seafood",
+          "title": "Seafood"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 35.6691231804303,
+        "longitude": 139.759259382556
+      },
+      "transactions": [],
+      "location": {
+        "address1": "銀座8-3-4",
+        "address2": "DKビル B1F",
+        "address3": "",
+        "city": "Minato",
+        "zip_code": "104-0061",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "銀座8-3-4",
+          "DKビル B1F",
+          "Minato, 東京都 〒104-0061",
+          "Japan"
+        ]
+      },
+      "phone": "+81362645995",
+      "display_phone": "+81 3-6264-5995",
+      "distance": 1083.179176178433,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1500",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2300",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {
+        "menu_url": "http://ginza.tamasaka.com/menu.php"
+      }
+    },
+    {
+      "id": "Kx59XvAVwfdDH7kxmafvbA",
+      "alias": "cest-chouette-中央区",
+      "name": "Chouette",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/o0VKN3WL7pXwIXmiKbJfSA/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/cest-chouette-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "french",
+          "title": "French"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 35.6684878721414,
+        "longitude": 139.770769276812
+      },
+      "transactions": [],
+      "location": {
+        "address1": "築地1丁目10-6",
+        "address2": "",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0045",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "築地1丁目10-6",
+          "Chūō, 東京都 〒104-0045",
+          "Japan"
+        ]
+      },
+      "phone": "",
+      "display_phone": "",
+      "distance": 332.0438336859785,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "2200",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": false
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "bUHjQ5_yrAwtw0YgukB03A",
+      "alias": "gramercy-table-中央区",
+      "name": "Gramercy Table",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/QPCYeQFzJTZMGphQtmOL5A/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/gramercy-table-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 2,
+      "categories": [
+        {
+          "alias": "bistros",
+          "title": "Bistros"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 35.6702880859375,
+        "longitude": 139.765625
+      },
+      "transactions": [],
+      "location": {
+        "address1": "銀座 5-9-5",
+        "address2": "",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0061",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "銀座 5-9-5",
+          "Chūō, 東京都 〒104-0061",
+          "Japan"
+        ]
+      },
+      "phone": "+81362285537",
+      "display_phone": "+81 3-6228-5537",
+      "distance": 680.1796760453723,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1430",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1430",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1430",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1430",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1800",
+              "end": "0000",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": false
+        }
+      ],
+      "attributes": {
+        "menu_url": "http://gramercytable.com/menu/"
+      }
+    },
+    {
+      "id": "KgRqVrmIk03eINLNS4Gqiw",
+      "alias": "ミタスカフェ-中央区",
+      "name": "Mitas Cafe",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/8gJ8RGjbF-uOx55oQMN4fA/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E3%83%9F%E3%82%BF%E3%82%B9%E3%82%AB%E3%83%95%E3%82%A7-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 4,
+      "categories": [
+        {
+          "alias": "cafes",
+          "title": "Cafes"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 35.6723070368401,
+        "longitude": 139.768463350969
+      },
+      "transactions": [],
+      "location": {
+        "address1": "銀座2丁目10-8",
+        "address2": "",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0061",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "銀座2丁目10-8",
+          "Chūō, 東京都 〒104-0061",
+          "Japan"
+        ]
+      },
+      "phone": "+81362787657",
+      "display_phone": "+81 3-6278-7657",
+      "distance": 774.9796722679079,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "0000",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "2300",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1800",
+              "day": 6
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {}
+    },
+    {
+      "id": "9xZVhwK9phm3GrDF-wfxwQ",
+      "alias": "ahill-ginza-中央区",
+      "name": "Ahill Ginza",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/_Hg9MlTf6cQAsBXd4J68UQ/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/ahill-ginza-%E4%B8%AD%E5%A4%AE%E5%8C%BA?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 3,
+      "categories": [
+        {
+          "alias": "french",
+          "title": "French"
+        },
+        {
+          "alias": "westernjapanese",
+          "title": "Western Style Japanese Food"
+        },
+        {
+          "alias": "teppanyaki",
+          "title": "Teppanyaki"
+        }
+      ],
+      "rating": 4,
+      "coordinates": {
+        "latitude": 35.6741512733608,
+        "longitude": 139.766298145369
+      },
+      "transactions": [],
+      "price": "￥￥",
+      "location": {
+        "address1": "銀座2-4-6",
+        "address2": "銀座Velvia館8F",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0061",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "銀座2-4-6",
+          "銀座Velvia館8F",
+          "Chūō, 東京都 〒104-0061",
+          "Japan"
+        ]
+      },
+      "phone": "+81335628080",
+      "display_phone": "+81 3-3562-8080",
+      "distance": 1029.042449156277,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 5
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 6
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2200",
+              "day": 6
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {
+        "menu_url": "http://www.ahill.jp/ginza/menu.html#menu3"
+      }
+    },
+    {
+      "id": "gp-0k9gw8qy_uwNT7-4tKg",
+      "alias": "銀座-長寿庵-中央区-2",
+      "name": "CHOJYUAN GINZA ",
+      "image_url": "https://s3-media0.fl.yelpcdn.com/bphoto/3axW5v3DHxxATnVKwrFdYg/o.jpg",
+      "is_closed": false,
+      "url": "https://www.yelp.com/biz/%E9%8A%80%E5%BA%A7-%E9%95%B7%E5%AF%BF%E5%BA%B5-%E4%B8%AD%E5%A4%AE%E5%8C%BA-2?adjust_creative=vp5CyzCB6x_ZnTLzybmySg&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=vp5CyzCB6x_ZnTLzybmySg",
+      "review_count": 1,
+      "categories": [
+        {
+          "alias": "donburi",
+          "title": "Donburi"
+        },
+        {
+          "alias": "soba",
+          "title": "Soba"
+        }
+      ],
+      "rating": 5,
+      "coordinates": {
+        "latitude": 35.672632,
+        "longitude": 139.770841
+      },
+      "transactions": [],
+      "location": {
+        "address1": "銀座1-21-15",
+        "address2": "第一銀長ビル",
+        "address3": "",
+        "city": "Chūō",
+        "zip_code": "104-0061",
+        "country": "JP",
+        "state": "13",
+        "display_address": [
+          "銀座1-21-15",
+          "第一銀長ビル",
+          "Chūō, 東京都 〒104-0061",
+          "Japan"
+        ]
+      },
+      "phone": "+81335612647",
+      "display_phone": "+81 3-3561-2647",
+      "distance": 792.1624830389115,
+      "business_hours": [
+        {
+          "open": [
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1500",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 0
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1500",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 1
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1500",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 2
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1500",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 3
+            },
+            {
+              "is_overnight": false,
+              "start": "1100",
+              "end": "1500",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1730",
+              "end": "2130",
+              "day": 4
+            },
+            {
+              "is_overnight": false,
+              "start": "1130",
+              "end": "1400",
+              "day": 5
+            }
+          ],
+          "hours_type": "REGULAR",
+          "is_open_now": true
+        }
+      ],
+      "attributes": {
+        "menu_url": "http://www.choujyuan.co.jp/menu.html"
+      }
+    }
+  ],
+  "total": 50000,
+  "region": {
+    "center": {
+      "longitude": 139.770398,
+      "latitude": 35.665517
+    }
+  }
+}

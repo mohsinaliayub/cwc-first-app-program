@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct BusinessDetailView: View {
-    var business: Business?
+    let business: Business
     
     var body: some View {
-        Text(business?.name ?? "NO-NAME")
+        Text(business.name)
     }
 }
 
 #Preview {
-    BusinessDetailView()
+    let business = PreviewDataService().previewBusiness()
+    BusinessDetailView(business: business)
 }
