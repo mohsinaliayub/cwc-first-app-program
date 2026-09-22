@@ -43,11 +43,12 @@ struct MainView: View {
                         HStack(alignment: .top) {
                             Image("list-placeholder-image")
                                 .padding(.trailing, 4)
-                            VStack(alignment: .leading) {
-                                Text(business.name)
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
                                     .font(.subheadline)
                                     .fontWeight(.semibold)
-                                Text("Distance")
+                                    .lineLimit(1)
+                                Text(TextHelper.distanceAwayText(meters: business.distance ?? 0))
                                     .font(.system(size: 16))
                                     .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
                             }
@@ -58,6 +59,7 @@ struct MainView: View {
                     }
                 }
             }
+            .padding(.top, 12)
         }
         .scrollIndicators(.hidden)
     }

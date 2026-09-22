@@ -17,9 +17,11 @@ struct Business {
     let categories: [Category]
     /// The latitude and longitude of the business location.
     let coordinates: Coordinate?
-    /// The business phone number with country code.
+    /// Readable representation of business phone number with country code.
     let displayPhone: String?
+    /// The distance to the business in meters.
     let distance: Double?
+    /// URL for the main display image of the business.
     let imageURL: String?
     /// A flag indicating whether the business is open or closed.
     let isClosed: Bool?
@@ -27,9 +29,13 @@ struct Business {
     let location: Location?
     /// The registered name of the business.
     let name: String
+    /// The business phone number with country code.
     let phone: String?
+    /// General price of the items provided by the business (e.g. "$" cheaper, "$$" normal, "$$$" expensive).
     let price: String?
+    /// The business rating based on reviews by visitors.
     let rating: Double?
+    /// The total number of reviews for the business.
     let reviewCount: Int?
     /// A link to the registered website of the business, if any.
     let url: String?
