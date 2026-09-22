@@ -73,7 +73,7 @@ struct BusinessInfoRow: View {
                         .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
                 }
                 Spacer()
-                Image("regular_\(business.rating ?? 0)")
+                Image(ImageHelper.ratingImageName(for: business.rating ?? 0))
             }
             Divider()
         }
