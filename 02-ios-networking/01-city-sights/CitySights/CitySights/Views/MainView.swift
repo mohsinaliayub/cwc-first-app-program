@@ -14,10 +14,9 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            searchBar
+            searchBar.padding(.horizontal)
             businessesListView
         }
-        .padding()
         .task {
             businesses = await dataService.searchRestaurants()
         }
@@ -37,7 +36,23 @@ struct MainView: View {
     
     private var businessesListView: some View {
         List(businesses) { business in
-            Text(business.name)
+            VStack {
+                HStack(alignment: .top) {
+                    Image("list-placeholder-image")
+                    VStack(alignment: .leading) {
+                        Text(business.name)
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                        Text("Distance")
+                            .font(.system(size: 16))
+                            .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
+                    }
+                    Spacer()
+                    Image("regular_\(business.rating ?? 0)")
+                }
+                Divider()
+            }
+            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
     }
