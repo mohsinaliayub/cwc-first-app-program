@@ -7,8 +7,11 @@
 
 import Foundation
 
+/// A local business (e.g. "Pizza Bert Restaurant).
 struct Business {
+    /// The unique identifier for the business.
     let id: String
+    /// The alias for the business, represented in small letters (e.g. "anton-cafébar-passau", not "Anton Cafébar").
     let alias: String?
     let categories: [Category]
     let coordinates: Coordinate?
@@ -17,6 +20,7 @@ struct Business {
     let imageURL: String?
     let isClosed: Bool?
     let location: Location?
+    /// The registered name of the business.
     let name: String
     let phone: String?
     let price: String?
