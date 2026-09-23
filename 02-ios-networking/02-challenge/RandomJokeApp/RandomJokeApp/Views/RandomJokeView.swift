@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  RandomJokeView.swift
 //  RandomJokeApp
 //
 //  Created by Mohsin Ali Ayub on 23.09.26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct RandomJokeView: View {
     @Environment(JokeViewModel.self) var model
     
     var body: some View {
@@ -27,6 +27,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    RandomJokeView()
         .environment(JokeViewModel())
 }

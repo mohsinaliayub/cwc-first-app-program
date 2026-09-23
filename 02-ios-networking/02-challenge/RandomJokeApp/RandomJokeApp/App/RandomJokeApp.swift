@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RandomJokeApp: App {
+    @State private var jokeViewModel = JokeViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RandomJokeView()
+                .environment(jokeViewModel)
         }
     }
 }
