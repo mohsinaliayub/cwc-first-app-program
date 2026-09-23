@@ -7,11 +7,6 @@ A simple challenge to test your understanding of the basics of networking, conne
 - Endpoint: https://v2.jokeapi.dev/joke/Any?type=single
 
 ## Challenge
-- Build a UI that lets you scroll through a list of movie posters
-- Each movie poster should have a label under it
-- Background of the app should be black
-- Create a "DataService" struct to serve the data (just like we did with the SushiMenu App)
-
 - Build a UI that has a Text label in the center of the screen. At the bottom, put a button.
 - When the button is tapped, it sends the API request
 - When the response returns, parse the data and display the joke in the Text label
