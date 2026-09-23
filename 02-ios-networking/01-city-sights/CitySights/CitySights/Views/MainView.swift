@@ -8,28 +8,29 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var query = ""
-    @State private var businesses: [Business] = []
-    @State private var selectedBusiness: Business?
-    private let dataService = DataService()
+    @Environment(BusinessViewModel.self) private var model
     
     var body: some View {
+        @Bindable var model = model
+        
         VStack {
             searchBar
             businessesListView
         }
         .padding()
         .task {
-            businesses = await dataService.searchRestaurants()
+            await model.searchBusinesses()
         }
-        .sheet(item: $selectedBusiness) { business in
+        .sheet(item: $model.selectedBusiness) { business in
             BusinessDetailView(business: business)
         }
     }
     
     private var searchBar: some View {
         HStack {
-            TextField("What're you looking for?", text: $query)
+            @Bindable var model = model
+            
+            TextField("What're you looking for?", text: $model.query)
                 .textFieldStyle(.roundedBorder)
             Button {
                 // TODO: Implement query search
@@ -42,10 +43,10 @@ struct MainView: View {
     private var businessesListView: some View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
-                ForEach(businesses) { business in
+                ForEach(model.businesses) { business in
                     BusinessInfoRow(business: business)
                         .onTapGesture {
-                            selectedBusiness = business
+                            model.selectedBusiness = business
                         }
                 }
             }
@@ -83,4 +84,5 @@ struct BusinessInfoRow: View {
 
 #Preview {
     MainView()
+        .environment(BusinessViewModel(dataService: DataService()))
 }
