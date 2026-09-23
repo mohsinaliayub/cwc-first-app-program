@@ -9,15 +9,31 @@ import SwiftUI
 
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
+    @State private var selectedTab = 0
     
     var body: some View {
         VStack {
             searchBar
             
-            // Show picker
+            segmentedPickerView
             
-            // Show map or list
+            if selectedTab == 1 {
+                MapView()
+            } else {
+                BusinessesListView()
+            }
         }
+    }
+    
+    private var segmentedPickerView: some View {
+        Picker("", selection: $selectedTab) {
+            Text("List")
+                .tag(0)
+            Text("Map")
+                .tag(1)
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal)
     }
     
     private var searchBar: some View {
@@ -32,7 +48,8 @@ struct MainView: View {
                 Text("Go")
             }
         }
-        .padding()
+        .padding(.horizontal)
+        .padding(.vertical, 8)
     }
 }
 
