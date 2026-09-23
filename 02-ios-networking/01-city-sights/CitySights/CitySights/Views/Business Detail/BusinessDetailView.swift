@@ -19,63 +19,46 @@ struct BusinessDetailView: View {
                     Image("yelp-attribution-image")
                 }
             if let isClosed = business.isClosed {
-                Rectangle()
-                    .fill(isClosed ? .red : .green)
-                    .frame(height: 36)
-                    .overlay(alignment: .leading) {
-                        Text(isClosed ? "Closed" : "Open")
-                            .bold()
-                            .foregroundStyle(.white)
-                            .padding(.leading)
-                    }
+                openClosedStatusView(isClosed)
             }
             
-            ScrollView {
-                VStack(alignment: .leading, spacing: 0) {
-                    Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
-                        .font(.system(size: 21))
-                        .bold()
-                        .padding(.bottom, 10)
-                    Text(address())
-                        .padding(.bottom, 10)
-                        .foregroundStyle(.secondary)
-                    Image(ImageHelper.ratingImageName(for: business.rating ?? 0.0))
-                        .padding(.bottom, 16)
-                    Divider()
-                    
-                    HStack {
-                        Image(systemName: "phone").frame(width: 24, height: 24)
-                        Text(business.displayPhone ?? "No phone number")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Image(systemName: "arrow.right")
-                            .foregroundStyle(.blue)
-                    }
-                    .padding(.vertical, 16)
-                    Divider()
-                    HStack {
-                        Image(systemName: "globe").frame(width: 24, height: 24)
-                        Text(business.url ?? "No website")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .lineLimit(1)
-                        Image(systemName: "arrow.right")
-                            .foregroundStyle(.blue)
-                    }
-                    .padding(.vertical, 16)
-                    Divider()
-                    HStack {
-                        Image(systemName: "bubble.left.and.bubble.right").frame(width: 24, height: 24)
-                        Text(reviewString())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Image(systemName: "arrow.right")
-                            .foregroundStyle(.blue)
-                    }
-                    .padding(.vertical, 16)
-                    Divider()
-                }
-                .padding()
-            }
-            .scrollIndicators(.hidden)
+            businessInfoScrollView
         }
+    }
+    
+    private func openClosedStatusView(_ isClosed: Bool) -> some View {
+        Rectangle()
+            .fill(isClosed ? .red : .green)
+            .frame(height: 36)
+            .overlay(alignment: .leading) {
+                Text(isClosed ? "Closed" : "Open")
+                    .bold()
+                    .foregroundStyle(.white)
+                    .padding(.leading)
+            }
+    }
+    
+    private var businessInfoScrollView: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
+                    .font(.system(size: 21))
+                    .bold()
+                    .padding(.bottom, 10)
+                Text(address())
+                    .padding(.bottom, 10)
+                    .foregroundStyle(.secondary)
+                Image(ImageHelper.ratingImageName(for: business.rating ?? 0.0))
+                    .padding(.bottom, 16)
+                Divider()
+                
+                TextIconDividerView(systemName: "phone", text: business.displayPhone ?? "No phone number")
+                TextIconDividerView(systemName: "globe", text: business.url ?? "No website")
+                TextIconDividerView(systemName: "bubble.left.and.bubble.right", text: reviewString())
+            }
+            .padding()
+        }
+        .scrollIndicators(.hidden)
     }
     
     private func reviewString() -> String {
