@@ -8,36 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var joke: Joke?
-    @State private var error: String?
-    private let service = DataService()
+    @Environment(JokeViewModel.self) var model
     
     var body: some View {
         ZStack {
-            Text(joke?.text ?? error ?? "Click Button to Get a Random Joke")
+            Text(model.text)
             
             VStack {
                 Spacer()
                 
                 Button("Get Random Joke") {
-                    fetchJoke()
+                    model.fetchRandomJoke()
                 }
             }
         }
         .padding()
     }
-    
-    private func fetchJoke() {
-        Task {
-            if let joke = await service.fetchRandomJoke() {
-                self.joke = joke
-            } else {
-                error = "Couldn't find the joke. Please try again..."
-            }
-        }
-    }
 }
 
 #Preview {
     ContentView()
+        .environment(JokeViewModel())
 }
