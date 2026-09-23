@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  BusinessesListView.swift
 //  CitySights
 //
 //  Created by Mohsin Ali Ayub on 21.09.26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct BusinessesListView: View {
     @Environment(BusinessViewModel.self) private var model
     
     var body: some View {
@@ -57,6 +57,6 @@ struct MainView: View {
 }
 
 #Preview {
-    MainView()
+    BusinessesListView()
         .environment(BusinessViewModel(dataService: DataService()))
 }

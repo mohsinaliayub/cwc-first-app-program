@@ -13,7 +13,7 @@ struct CitySightsApp: App {
     
     var body: some Scene {
         WindowGroup {
-            MainView()
+            BusinessesListView()
                 .environment(businessViewModel)
         }
     }
