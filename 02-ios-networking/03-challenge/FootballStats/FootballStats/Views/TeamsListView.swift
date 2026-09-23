@@ -33,8 +33,13 @@ struct TeamsListView: View {
                         }
                         .frame(width: 60, height: 60)
                         .aspectRatio(contentMode: .fit)
-                        Text(team.name)
-                            .font(.headline)
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text(team.name)
+                                .font(.headline)
+                            Text(team.website)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
                         Spacer()
                     }
                     Divider()

@@ -15,6 +15,12 @@ struct FootballTeam {
     let name: String
     /// Official crest of the club or team.
     let crest: String
+    /// The postal address of the team.
+    let address: String
+    /// Official website of the team.
+    let website: String
+    /// Founding year of the team.
+    let founded: Int
 }
 
 extension FootballTeam: Identifiable { }
