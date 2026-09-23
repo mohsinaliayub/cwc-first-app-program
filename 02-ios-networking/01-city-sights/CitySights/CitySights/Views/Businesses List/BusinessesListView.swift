@@ -13,31 +13,14 @@ struct BusinessesListView: View {
     var body: some View {
         @Bindable var model = model
         
-        VStack {
-            searchBar
-            businessesListView
-        }
-        .padding()
-        .task {
-            await model.searchBusinesses()
-        }
-        .sheet(item: $model.selectedBusiness) { business in
-            BusinessDetailView(business: business)
-        }
-    }
-    
-    private var searchBar: some View {
-        HStack {
-            @Bindable var model = model
-            
-            TextField("What're you looking for?", text: $model.query)
-                .textFieldStyle(.roundedBorder)
-            Button {
-                // TODO: Implement query search
-            } label: {
-                Text("Go")
+        businessesListView
+            .padding()
+            .task {
+                await model.searchBusinesses()
             }
-        }
+            .sheet(item: $model.selectedBusiness) { business in
+                BusinessDetailView(business: business)
+            }
     }
     
     private var businessesListView: some View {
