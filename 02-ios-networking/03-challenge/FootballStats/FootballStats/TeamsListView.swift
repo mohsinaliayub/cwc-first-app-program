@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  TeamsListView.swift
 //  FootballStats
 //
 //  Created by Mohsin Ali Ayub on 24.09.26.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct TeamsListView: View {
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -20,5 +20,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    TeamsListView()
 }
