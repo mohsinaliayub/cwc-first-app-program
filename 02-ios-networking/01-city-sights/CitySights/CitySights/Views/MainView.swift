@@ -12,7 +12,7 @@ struct MainView: View {
     @State private var selectedTab = 0
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             searchBar
             
             segmentedPickerView
@@ -48,8 +48,7 @@ struct MainView: View {
                 Text("Go")
             }
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+        .padding()
     }
 }
 
