@@ -44,7 +44,7 @@ struct MainView: View {
         ScrollView {
             LazyVStack(alignment: .leading, spacing: 12) {
                 ForEach(model.businesses) { business in
-                    BusinessInfoRow(business: business)
+                    BusinessRowView(business: business)
                         .onTapGesture {
                             model.selectedBusiness = business
                         }
@@ -55,32 +55,6 @@ struct MainView: View {
         .scrollIndicators(.hidden)
     }
 }
-
-struct BusinessInfoRow: View {
-    let business: Business
-    
-    var body: some View {
-        VStack {
-            HStack(alignment: .top) {
-                Image("list-placeholder-image")
-                    .padding(.trailing, 4)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .lineLimit(1)
-                    Text(TextHelper.distanceAwayText(meters: business.distance ?? 0))
-                        .font(.system(size: 16))
-                        .foregroundStyle(Color(red: 67/255, green: 71/255, blue: 76/255))
-                }
-                Spacer()
-                Image(ImageHelper.ratingImageName(for: business.rating ?? 0))
-            }
-            Divider()
-        }
-    }
-}
-
 
 #Preview {
     MainView()
