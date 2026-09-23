@@ -33,7 +33,6 @@ struct BusinessesListView: View {
                         }
                 }
             }
-            .padding(.top, 12)
         }
         .scrollIndicators(.hidden)
     }

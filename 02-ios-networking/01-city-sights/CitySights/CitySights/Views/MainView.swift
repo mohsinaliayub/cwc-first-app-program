@@ -19,6 +19,7 @@ struct MainView: View {
             
             if selectedTab == 1 {
                 MapView()
+                    .padding(.top)
             } else {
                 BusinessesListView()
             }
