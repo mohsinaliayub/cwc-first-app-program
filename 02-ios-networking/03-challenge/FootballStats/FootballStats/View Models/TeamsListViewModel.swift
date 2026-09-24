@@ -9,9 +9,16 @@ import Foundation
 
 @Observable
 class TeamsListViewModel {
-    private let dataService = DataService()
+    /// Data service to fetch teams.
+    private let dataService: DataService
+    /// Collection of football teams.
     var teams: [FootballTeam] = []
     
+    init(dataService: DataService) {
+        self.dataService = dataService
+    }
+    
+    /// Retrieve collection of football teams from external data source.
     func fetchFootballTeams() async {
         teams = await dataService.fetchFootballTeams()
     }

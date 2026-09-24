@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct TeamsListView: View {
-    @State private var teams: [FootballTeam] = []
-    private let service = DataService()
+    @Environment(TeamsListViewModel.self) private var model
     
     var body: some View {
         VStack(alignment: .leading) {
             listView
         }
         .task {
-            teams = await service.fetchFootballTeams()
+            await model.fetchFootballTeams()
         }
         .padding()
     }
@@ -24,7 +23,7 @@ struct TeamsListView: View {
     private var listView: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 8) {
-                ForEach(teams) { team in
+                ForEach(model.teams) { team in
                     TeamRowView(team: team)
                 }
             }
@@ -35,4 +34,5 @@ struct TeamsListView: View {
 
 #Preview {
     TeamsListView()
+        .environment(TeamsListViewModel(dataService: DataService()))
 }
