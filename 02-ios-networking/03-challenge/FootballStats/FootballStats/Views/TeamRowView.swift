@@ -26,6 +26,7 @@ struct TeamRowView: View {
             image.resizable()
         } placeholder: {
             RoundedRectangle(cornerRadius: 10)
+                .fill(Color.clear)
         }
         .frame(width: 60, height: 60)
         .aspectRatio(contentMode: .fit)

@@ -11,8 +11,9 @@ struct TeamsListView: View {
     @Environment(TeamsListViewModel.self) private var model
     
     var body: some View {
-        VStack(alignment: .leading) {
+        NavigationStack {
             listView
+                .navigationTitle("Football Teams")
         }
         .task {
             await model.fetchFootballTeams()
@@ -22,7 +23,7 @@ struct TeamsListView: View {
     
     private var listView: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 8) {
+            LazyVStack(alignment: .leading, spacing: 8) {
                 ForEach(model.teams) { team in
                     TeamRowView(team: team)
                 }
