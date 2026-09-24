@@ -10,9 +10,18 @@ import Foundation
 struct DataService {
     private let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     private let teamsEndpoint = "https://api.football-data.org/v4/teams?limit=10"
+    private var teams: [FootballTeam] = []
     
     /// Fetch a collection of football teams.
-    func fetchFootballTeams() async -> [FootballTeam] {
+    mutating func fetchFootballTeams() async -> [FootballTeam] {
+        if teams.isEmpty {
+            teams = await fetchDataFromAPI()
+        }
+        
+        return teams
+    }
+    
+    private func fetchDataFromAPI() async -> [FootballTeam] {
         guard let apiKey, let url = URL(string: teamsEndpoint) else { return [] }
         
         var request = URLRequest(url: url)
