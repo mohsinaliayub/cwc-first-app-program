@@ -42,6 +42,7 @@ struct TeamRowView: View {
     }
 }
 
-//#Preview {
-//    TeamRowView()
-//}
+#Preview {
+    let team = DummyDataService().fetchPreviewTeam()
+    TeamRowView(team: team)
+}
