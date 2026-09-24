@@ -29,4 +29,4 @@ Solution can be found [here](https://www.dropbox.com/scl/fi/snymretuue7zcet5tj1a
 You can check the solution and this app code to see if they do the exact same thing.
 
 # Screenshots
-<img src="Screenshots/ContentView.png" width="231" height="500" alt="Football Teams List View">
+<img src="Screenshots/App.png" width="231" height="500" alt="Football Teams List View">
