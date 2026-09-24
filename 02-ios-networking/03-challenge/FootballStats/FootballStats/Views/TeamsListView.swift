@@ -23,26 +23,9 @@ struct TeamsListView: View {
     
     private var listView: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 8) {
                 ForEach(teams) { team in
-                    HStack(alignment: .top, spacing: 16) {
-                        AsyncImage(url: URL(string: team.crest)) { image in
-                            image.resizable()
-                        } placeholder: {
-                            RoundedRectangle(cornerRadius: 10)
-                        }
-                        .frame(width: 60, height: 60)
-                        .aspectRatio(contentMode: .fit)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(team.name)
-                                .font(.headline)
-                            Text(team.website)
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                        Spacer()
-                    }
-                    Divider()
+                    TeamRowView(team: team)
                 }
             }
         }
