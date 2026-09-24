@@ -13,12 +13,8 @@ struct DataService {
     private var teams: [FootballTeam] = []
     
     /// Fetch a collection of football teams.
-    mutating func fetchFootballTeams() async -> [FootballTeam] {
-        if teams.isEmpty {
-            teams = await fetchDataFromAPI()
-        }
-        
-        return teams
+    func fetchFootballTeams() async -> [FootballTeam] {
+        await fetchDataFromAPI()
     }
     
     private func fetchDataFromAPI() async -> [FootballTeam] {

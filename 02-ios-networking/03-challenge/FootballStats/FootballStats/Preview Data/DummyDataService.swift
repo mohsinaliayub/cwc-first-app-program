@@ -10,16 +10,11 @@ import Foundation
 struct DummyDataService {
     private var teams: [FootballTeam] = []
     
-    mutating func fetchTeams() -> [FootballTeam] {
-        if teams.isEmpty {
-            teams = loadTeamsDataFileContent()
-        }
-        
-        return teams
+    func fetchTeams() -> [FootballTeam] {
+        return loadTeamsDataFileContent()
     }
     
-    mutating func fetchPreviewTeam() -> FootballTeam {
-        guard teams.isEmpty else { return teams[0] }
+    func fetchPreviewTeam() -> FootballTeam {
         return fetchTeams()[0]
     }
     
