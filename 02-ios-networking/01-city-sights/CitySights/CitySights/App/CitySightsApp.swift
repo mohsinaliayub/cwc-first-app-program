@@ -10,13 +10,14 @@ import SwiftUI
 @main
 struct CitySightsApp: App {
     @State var businessViewModel = BusinessViewModel(dataService: DataService())
+    @State private var needsOnboarding = true
     
     var body: some Scene {
         WindowGroup {
             MainView()
                 .environment(businessViewModel)
-                .fullScreenCover(isPresented: .constant(true)) {
-                    // TODO: Implement dismiss functionality
+                .fullScreenCover(isPresented: $needsOnboarding) {
+                    needsOnboarding = false
                 } content: {
                     OnboardingView()
                 }
