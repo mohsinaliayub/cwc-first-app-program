@@ -11,16 +11,8 @@ struct BusinessesListView: View {
     @Environment(BusinessViewModel.self) private var model
     
     var body: some View {
-        @Bindable var model = model
-        
         businessesListView
             .padding()
-            .task {
-                await model.searchBusinesses()
-            }
-            .sheet(item: $model.selectedBusiness) { business in
-                BusinessDetailView(business: business)
-            }
     }
     
     private var businessesListView: some View {

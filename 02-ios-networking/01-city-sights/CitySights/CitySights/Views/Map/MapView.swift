@@ -20,8 +20,10 @@ struct MapView: View {
                 .tag(business.id)
             }
         }
-        .onChange(of: selectedBusinessID) { oldValue, newValue in
+        .onChange(of: selectedBusinessID) { _, newValue in
             // Find the matching business
+            let business = model.businesses.first { $0.id == newValue }
+            model.selectedBusiness = business
         }
     }
 }

@@ -12,6 +12,8 @@ struct MainView: View {
     @State private var selectedTab = 0
     
     var body: some View {
+        @Bindable var model = model
+        
         VStack(spacing: 0) {
             searchBar
             
@@ -23,6 +25,12 @@ struct MainView: View {
             } else {
                 BusinessesListView()
             }
+        }
+        .task {
+            await model.searchBusinesses()
+        }
+        .sheet(item: $model.selectedBusiness) { business in
+            BusinessDetailView(business: business)
         }
     }
     
