@@ -13,7 +13,10 @@ struct MapView: View {
     
     var body: some View {
         Map() {
-            
+            ForEach(model.businesses) { business in
+                Marker(business.name, coordinate: CLLocationCoordinate2D(latitude: business.coordinates?.latitude ?? 0,
+                                                                         longitude: business.coordinates?.longitude ?? 0))
+            }
         }
     }
 }
