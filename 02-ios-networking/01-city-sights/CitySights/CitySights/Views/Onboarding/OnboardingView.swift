@@ -10,12 +10,14 @@ import SwiftUI
 struct OnboardingView: View {
     private let blueColor = Color(red: 111/255, green: 154/255, blue: 189/255)
     private let greenColor = Color(red: 139/255, green: 166/255, blue: 65/255)
+    private let scene1Index = 0
+    private let scene2Index = 1
     @State private var selectedViewIndex = 0
     @Environment(\.dismiss) var dismiss
     
     var body: some View {
         ZStack {
-            if selectedViewIndex == 0 {
+            if selectedViewIndex == scene1Index {
                 blueColor
             } else {
                 greenColor
@@ -23,19 +25,27 @@ struct OnboardingView: View {
             
             pagedTabView
             
-            VStack {
-                Spacer()
-                HStack(spacing: 16) {
-                    Circle().frame(width: 10)
-                        .foregroundStyle(selectedViewIndex == 0 ? .white : .gray)
-                    Circle().frame(width: 10)
-                        .foregroundStyle(selectedViewIndex == 1 ? .white : .gray)
-                }
-                .foregroundStyle(.white)
-                .padding(.bottom, 220)
-            }
+            pageTabs
         }
         .ignoresSafeArea()
+    }
+    
+    private var pageTabs: some View {
+        VStack {
+            Spacer()
+            HStack(spacing: 16) {
+                circle(for: scene1Index)
+                circle(for: scene2Index)
+            }
+            .foregroundStyle(.white)
+            .padding(.bottom, 220)
+        }
+    }
+    
+    private func circle(for index: Int) -> some View {
+        Circle()
+            .frame(width: 10)
+            .foregroundStyle(selectedViewIndex == index ? .white : .gray)
     }
     
     private var pagedTabView: some View {
