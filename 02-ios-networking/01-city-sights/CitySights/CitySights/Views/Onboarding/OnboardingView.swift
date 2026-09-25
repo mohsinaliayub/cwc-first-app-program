@@ -22,6 +22,18 @@ struct OnboardingView: View {
             }
             
             pagedTabView
+            
+            VStack {
+                Spacer()
+                HStack(spacing: 16) {
+                    Circle().frame(width: 10)
+                        .foregroundStyle(selectedViewIndex == 0 ? .white : .gray)
+                    Circle().frame(width: 10)
+                        .foregroundStyle(selectedViewIndex == 1 ? .white : .gray)
+                }
+                .foregroundStyle(.white)
+                .padding(.bottom, 220)
+            }
         }
         .ignoresSafeArea()
     }
