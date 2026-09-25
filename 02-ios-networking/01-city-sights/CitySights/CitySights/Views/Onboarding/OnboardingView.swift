@@ -8,44 +8,23 @@
 import SwiftUI
 
 struct OnboardingView: View {
+    @State private var selection = 0
+    
     var body: some View {
-        TabView {
-            ZStack {
-                Color(red: 111/255, green: 154/255, blue: 189/255)
-                VStack(spacing: 0) {
-                    Spacer()
-                    Spacer()
-                    
-                    Image("onboarding")
-                        .padding(.bottom, 32)
-                    
-                    Text("Welcome to City Sights")
-                        .font(.title2)
-                        .bold()
-                        .padding(.bottom, 4)
-                    
-                    Text("City Sights helps you find the best of the city!")
-                    
-                    Spacer()
-                    
-                    Button {
-                        // TODO
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 14)
-                                .foregroundStyle(.white)
-                            Text("Continue")
-                                .foregroundStyle(.black)
-                                .bold()
-                        }
-                    }
-                    .frame(height: 50)
-                    .padding(.horizontal)
-                    .padding(.bottom, 115)
-                }
-                .foregroundStyle(.white)
+        TabView(selection: $selection) {
+            OnboardingScene(bgColor: Color(red: 111/255, green: 154/255, blue: 189/255),
+                            headline: "Welcome to City Sights",
+                            subheadline: "City Sights helps you find the best of the city!") {
+                selection = 1
             }
-            .ignoresSafeArea()
+                            .tag(0)
+            
+            OnboardingScene(bgColor: Color(red: 139/255, green: 166/255, blue: 65/255),
+                            headline: "Discover your City",
+                            subheadline: "We'll show you the best restaurants, venues, and more, based on your location.") {
+                
+            }
+                            .tag(1)
         }
         .tabViewStyle(.page)
         .ignoresSafeArea()
