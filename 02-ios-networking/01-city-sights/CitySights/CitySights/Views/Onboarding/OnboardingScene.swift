@@ -39,7 +39,6 @@ struct OnboardingScene: View {
             .foregroundStyle(.white)
             .padding(.horizontal)
         }
-        .ignoresSafeArea()
     }
     
     var continueButton: some View {
@@ -65,4 +64,5 @@ struct OnboardingScene: View {
                     subheadline: "City Sights helps you find the best of the city!") {
         
     }
+                    .ignoresSafeArea()
 }
