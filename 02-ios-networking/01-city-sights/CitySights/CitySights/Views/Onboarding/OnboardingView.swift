@@ -9,7 +9,12 @@ import SwiftUI
 
 struct OnboardingView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            Rectangle().fill(.red)
+            
+            Rectangle().fill(.green)
+        }
+        .tabViewStyle(.page)
     }
 }
 

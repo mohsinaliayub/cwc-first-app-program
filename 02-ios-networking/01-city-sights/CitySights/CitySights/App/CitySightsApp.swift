@@ -15,6 +15,12 @@ struct CitySightsApp: App {
         WindowGroup {
             MainView()
                 .environment(businessViewModel)
+                .fullScreenCover(isPresented: .constant(true)) {
+                    // TODO: Implement dismiss functionality
+                } content: {
+                    OnboardingView()
+                }
+
         }
     }
 }
