@@ -12,23 +12,9 @@ struct DataService {
     private let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
     /// Search local restaurants based on your location.
-    func searchRestaurants() async -> [Business] {
-        let latitude = 35.665517
-        let longitude = 139.770398
-        
-        guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
-            return []
-        }
-        
-        return await fetchBusinesses(from: url)
-    }
-    
-    /// Search local restaurants based on your location.
     func searchRestaurants(for userLocation: CLLocationCoordinate2D?) async -> [Business] {
-        guard let userLocation else { return await searchRestaurants() }
-        
-        let latitude = userLocation.latitude
-        let longitude = userLocation.longitude
+        let latitude = userLocation?.latitude ?? 35.665517
+        let longitude = userLocation?.longitude ?? 139.770398
         
         guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
             return []

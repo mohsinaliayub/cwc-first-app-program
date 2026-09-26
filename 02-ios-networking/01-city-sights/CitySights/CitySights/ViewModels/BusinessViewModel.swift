@@ -25,8 +25,10 @@ class BusinessViewModel: NSObject {
         locationManager.delegate = self
     }
     
-    func searchBusinesses() async {
-        businesses = await dataService.searchRestaurants(for: currentUserLocation)
+    func searchBusinesses() {
+        Task {
+            businesses = await dataService.searchRestaurants(for: currentUserLocation)
+        }
     }
     
     /// Locates the user.
@@ -58,13 +60,10 @@ extension BusinessViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        currentUserLocation = locations.last?.coordinate
-        
         // If location is not nil, search businesses.
-        if currentUserLocation != nil {
-            Task {
-                await searchBusinesses()
-            }
+        if currentUserLocation == nil {
+            currentUserLocation = locations.last?.coordinate
+            searchBusinesses()
         }
         
         // Stop location updates to preserve batter.

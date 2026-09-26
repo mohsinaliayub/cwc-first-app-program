@@ -27,7 +27,7 @@ struct MainView: View {
             }
         }
         .task {
-            await model.searchBusinesses()
+            model.searchBusinesses()
         }
         .sheet(item: $model.selectedBusiness) { business in
             BusinessDetailView(business: business)
