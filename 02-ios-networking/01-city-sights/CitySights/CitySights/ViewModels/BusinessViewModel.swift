@@ -58,8 +58,13 @@ extension BusinessViewModel: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last?.coordinate {
-            print(location)
+        currentUserLocation = locations.last?.coordinate
+        
+        // If location is not nil, search businesses.
+        if currentUserLocation != nil {
+            Task {
+                await searchBusinesses()
+            }
         }
         
         // Stop location updates to preserve batter.
