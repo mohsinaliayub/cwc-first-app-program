@@ -26,7 +26,7 @@ class BusinessViewModel: NSObject {
     }
     
     func searchBusinesses() async {
-        businesses = await dataService.searchRestaurants()
+        businesses = await dataService.searchRestaurants(for: currentUserLocation)
     }
     
     /// Locates the user.
