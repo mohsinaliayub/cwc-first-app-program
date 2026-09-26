@@ -40,5 +40,15 @@ class BusinessViewModel: NSObject {
 }
 
 extension BusinessViewModel: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print(error)
+    }
     
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        // Detect if user allowed, then request location.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
 }
