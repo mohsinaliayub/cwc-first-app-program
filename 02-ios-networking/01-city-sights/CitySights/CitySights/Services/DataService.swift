@@ -14,12 +14,24 @@ struct DataService {
     
     /// Search local restaurants based on your location.
     func searchRestaurants() async -> [Business] {
-        // If api key doesn't exist, return.
-        guard let apiKey else { return [] }
-        
         guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
             return []
         }
+        
+        return await fetchBusinesses(from: url)
+    }
+    
+    func searchRestaurants(for userLocation: String) async -> [Business] {
+        guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
+            return []
+        }
+        
+        return await fetchBusinesses(from: url)
+    }
+    
+    /// Fetch local businesses from api.
+    private func fetchBusinesses(from url: URL) async -> [Business] {
+        guard let apiKey else { return [] }
         
         // Create URL Request
         var request = URLRequest(url: url)
