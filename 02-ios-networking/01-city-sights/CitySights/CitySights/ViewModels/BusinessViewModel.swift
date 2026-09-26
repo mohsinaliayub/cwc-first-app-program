@@ -9,7 +9,7 @@ import SwiftUI
 import CoreLocation
 
 @Observable
-class BusinessViewModel {
+class BusinessViewModel: NSObject {
     var query = ""
     var businesses: [Business] = []
     var selectedBusiness: Business?
@@ -17,8 +17,10 @@ class BusinessViewModel {
     private let dataService: DataService
     private let locationManager = CLLocationManager()
     
-    init(dataService: DataService) {
+    init(dataService: DataService = DataService()) {
         self.dataService = dataService
+        super.init()
+        locationManager.delegate = self
     }
     
     func searchBusinesses() async {
@@ -35,4 +37,8 @@ class BusinessViewModel {
         
         locationManager.requestLocation()
     }
+}
+
+extension BusinessViewModel: CLLocationManagerDelegate {
+    
 }
