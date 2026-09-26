@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 @Observable
 class BusinessViewModel {
@@ -14,6 +15,7 @@ class BusinessViewModel {
     var selectedBusiness: Business?
     
     private let dataService: DataService
+    private let locationManager = CLLocationManager()
     
     init(dataService: DataService) {
         self.dataService = dataService
@@ -21,5 +23,16 @@ class BusinessViewModel {
     
     func searchBusinesses() async {
         businesses = await dataService.searchRestaurants()
+    }
+    
+    /// Locates the user.
+    func getUserLocation() {
+        // Check if we have user location.
+        guard locationManager.authorizationStatus == .authorizedWhenInUse else {
+            locationManager.requestWhenInUseAuthorization()
+            return
+        }
+        
+        locationManager.requestLocation()
     }
 }

@@ -14,6 +14,7 @@ struct OnboardingView: View {
     private let scene2Index = 1
     @State private var selectedViewIndex = 0
     @Environment(\.dismiss) var dismiss
+    @Environment(BusinessViewModel.self) var model
     
     var body: some View {
         ZStack {
@@ -63,6 +64,7 @@ struct OnboardingView: View {
             OnboardingScene(bgColor: greenColor,
                             headline: "Discover your City",
                             subheadline: "We'll show you the best restaurants, venues, and more, based on your location.") {
+                model.getUserLocation()
                 dismiss()
             }
                             .ignoresSafeArea()
@@ -74,4 +76,5 @@ struct OnboardingView: View {
 
 #Preview {
     OnboardingView()
+        .environment(BusinessViewModel(dataService: DataService()))
 }
