@@ -16,10 +16,12 @@ class BusinessViewModel: NSObject {
     
     private let dataService: DataService
     private let locationManager = CLLocationManager()
+    private var currentUserLocation: CLLocationCoordinate2D?
     
     init(dataService: DataService = DataService()) {
         self.dataService = dataService
         super.init()
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
     }
     
@@ -35,6 +37,7 @@ class BusinessViewModel: NSObject {
             return
         }
         
+        currentUserLocation = nil
         locationManager.requestLocation()
     }
 }
@@ -46,9 +49,20 @@ extension BusinessViewModel: CLLocationManagerDelegate {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         // Detect if user allowed, then request location.
+        guard locationManager.authorizationStatus == .authorizedWhenInUse else {
+            return
+        }
+        
+        currentUserLocation = nil
+        manager.requestLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last?.coordinate {
+            print(location)
+        }
         
+        // Stop location updates to preserve batter.
+        manager.stopUpdatingLocation()
     }
 }
