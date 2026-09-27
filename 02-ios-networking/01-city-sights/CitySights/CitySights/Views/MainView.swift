@@ -13,6 +13,7 @@ struct MainView: View {
     @State private var dealsOn = false
     @State private var popularOn = false
     @State private var categorySelection = "restaurants"
+    @State private var showOptions = false
     @FocusState private var queryBoxFocused: Bool
     
     var body: some View {
@@ -20,10 +21,8 @@ struct MainView: View {
         
         VStack(spacing: 0) {
             searchBar
-            if queryBoxFocused {
-                withAnimation {
-                    queryOptionsView
-                }
+            if showOptions {
+                queryOptionsView
             }
             
             segmentedPickerView
@@ -32,12 +31,18 @@ struct MainView: View {
                 MapView()
                     .padding(.top)
                     .onTapGesture {
-                        queryBoxFocused = false
+                        withAnimation {
+                            showOptions = false
+                            queryBoxFocused = false
+                        }
                     }
             } else {
                 BusinessesListView()
                     .onTapGesture {
-                        queryBoxFocused = false
+                        withAnimation {
+                            showOptions = false
+                            queryBoxFocused = false
+                        }
                     }
             }
         }
@@ -66,6 +71,12 @@ struct MainView: View {
             
             TextField("What're you looking for?", text: $model.query)
                 .textFieldStyle(.roundedBorder)
+                .onTapGesture {
+                    withAnimation {
+                        print("did it work?")
+                        showOptions = true
+                    }
+                }
                 .focused($queryBoxFocused)
             
             Button {
@@ -109,8 +120,9 @@ struct MainView: View {
                 }
             }
         }
-        .padding(.horizontal)
+        .padding(.horizontal, 32)
         .padding(.bottom, 8)
+        .transition(.push(from: .top))
     }
 }
 
