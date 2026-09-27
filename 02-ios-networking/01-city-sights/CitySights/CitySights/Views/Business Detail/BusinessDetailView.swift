@@ -11,25 +11,27 @@ struct BusinessDetailView: View {
     let business: Business
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            if let imageURLString = business.imageURL {
-                BusinessImageView(for: imageURLString, width: .infinity, height: 200)
-                    .overlay(alignment: .bottomTrailing) {
-                        yelpAttributionImage
-                    }
-            } else {
-                Image("detail-placeholder-image")
-                    .resizable()
-                    .frame(height: 200)
-                    .overlay(alignment: .bottomTrailing) {
-                        yelpAttributionImage
-                    }
+        GeometryReader { proxy in
+            VStack(alignment: .leading, spacing: 0) {
+                if let imageURLString = business.imageURL {
+                    BusinessImageView(for: imageURLString, width: proxy.size.width, height: 200)
+                        .overlay(alignment: .bottomTrailing) {
+                            yelpAttributionImage
+                        }
+                } else {
+                    Image("detail-placeholder-image")
+                        .resizable()
+                        .frame(height: 200)
+                        .overlay(alignment: .bottomTrailing) {
+                            yelpAttributionImage
+                        }
+                }
+                if let isClosed = business.isClosed {
+                    openClosedStatusView(isClosed)
+                }
+                
+                businessInfoScrollView
             }
-            if let isClosed = business.isClosed {
-                openClosedStatusView(isClosed)
-            }
-            
-            businessInfoScrollView
         }
     }
     
