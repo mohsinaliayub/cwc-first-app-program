@@ -57,6 +57,7 @@ struct MainView: View {
                 .textFieldStyle(.roundedBorder)
             Button {
                 // TODO: Implement query search
+                model.searchBusinesses(query: model.query, options: getOptionsString(), category: categorySelection)
             } label: {
                 Text("Go")
                     .bold()
@@ -68,6 +69,17 @@ struct MainView: View {
             }
         }
         .padding()
+    }
+    
+    private func getOptionsString() -> String {
+        var optionsArray = [String]()
+        if popularOn {
+            optionsArray.append("hot_and_new")
+        }
+        if dealsOn {
+            optionsArray.append("deals")
+        }
+        return optionsArray.joined(separator: ",")
     }
     
     private var queryOptionsView: some View {
