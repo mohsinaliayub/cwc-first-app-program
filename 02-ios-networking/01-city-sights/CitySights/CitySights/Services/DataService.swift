@@ -12,16 +12,41 @@ struct DataService {
     private let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
     /// Search local restaurants based on your location.
-    func searchRestaurants(for userLocation: CLLocationCoordinate2D?) async -> [Business] {
-        let latitude = userLocation?.latitude ?? 35.665517
-        let longitude = userLocation?.longitude ?? 139.770398
-        
-        guard let url = URL(string: "https://api.yelp.com/v3/businesses/search?categories=restaurants&latitude=\(latitude)&longitude=\(longitude)&limit=10") else {
+    func searchRestaurants(for userLocation: CLLocationCoordinate2D?, query: String?, options: String?, category: String?) async -> [Business] {
+        guard let url = createBusinessSearchURL(for: userLocation, query: query, options: options, category: category) else {
             return []
         }
         
         return await fetchBusinesses(from: url)
     }
+    
+    private func createBusinessSearchURL(for location: CLLocationCoordinate2D?, query: String?, options: String?, category: String?) -> URL? {
+        var components = URLComponents()
+        components.scheme = "https"
+        components.host = "api.yelp.com"
+        components.path = "/v3/businesses/search"
+        
+        let latitude = location?.latitude ?? 35.665517
+        let longitude = location?.longitude ?? 139.770398
+        
+        var queryItems: [URLQueryItem] = [
+            URLQueryItem(name: "latitude", value: String(latitude)),
+            URLQueryItem(name: "longitude", value: String(longitude))
+        ]
+        if let query {
+            queryItems.append(URLQueryItem(name: "term", value: query))
+        }
+        if let options {
+            queryItems.append(URLQueryItem(name: "attributes", value: options))
+        }
+        if let category {
+            queryItems.append(URLQueryItem(name: "categories", value: category))
+        }
+        
+        components.queryItems = queryItems
+        return components.url
+    }
+    
     
     /// Fetch local businesses from api.
     private func fetchBusinesses(from url: URL) async -> [Business] {

@@ -31,7 +31,7 @@ struct MainView: View {
             }
         }
         .task {
-            model.searchBusinesses()
+            model.searchBusinesses(query: nil, options: nil, category: nil)
         }
         .sheet(item: $model.selectedBusiness) { business in
             BusinessDetailView(business: business)
