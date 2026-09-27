@@ -10,12 +10,16 @@ import SwiftUI
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
     @State private var selectedTab = 0
+    @State private var dealsOn = false
+    @State private var popularOn = false
+    @State private var categorySelection = "restaurants"
     
     var body: some View {
         @Bindable var model = model
         
         VStack(spacing: 0) {
             searchBar
+            queryOptionsView
             
             segmentedPickerView
             
@@ -55,9 +59,33 @@ struct MainView: View {
                 // TODO: Implement query search
             } label: {
                 Text("Go")
+                    .bold()
+                    .padding()
+                    .frame(height: 32)
+                    .background(Color.blue)
+                    .foregroundStyle(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 6))
             }
         }
         .padding()
+    }
+    
+    private var queryOptionsView: some View {
+        VStack {
+            Toggle("Popular", isOn: $popularOn)
+            Toggle("Deals", isOn: $dealsOn)
+            
+            HStack {
+                Text("Category")
+                Spacer()
+                Picker("Category", selection: $categorySelection) {
+                    Text("Restaurants").tag("restaurants")
+                    Text("Arts").tag("arts")
+                }
+            }
+        }
+        .padding(.horizontal)
+        .padding(.bottom, 8)
     }
 }
 
