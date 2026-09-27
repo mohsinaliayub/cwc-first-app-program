@@ -31,21 +31,20 @@ struct MainView: View {
                 MapView()
                     .padding(.top)
                     .onTapGesture {
-                        withAnimation {
-                            showOptions = false
-                            queryBoxFocused = false
-                        }
+                        queryBoxFocused = false
                     }
             } else {
                 BusinessesListView()
                     .onTapGesture {
-                        withAnimation {
-                            showOptions = false
-                            queryBoxFocused = false
-                        }
+                        queryBoxFocused = false
                     }
             }
         }
+        .onChange(of: queryBoxFocused, { _, newValue in
+            withAnimation {
+                showOptions = newValue
+            }
+        })
         .task {
             model.searchBusinesses(query: nil, options: nil, category: nil)
         }
@@ -70,14 +69,8 @@ struct MainView: View {
             @Bindable var model = model
             
             TextField("What're you looking for?", text: $model.query)
-                .textFieldStyle(.roundedBorder)
-                .onTapGesture {
-                    withAnimation {
-                        print("did it work?")
-                        showOptions = true
-                    }
-                }
                 .focused($queryBoxFocused)
+                .textFieldStyle(.roundedBorder)
             
             Button {
                 queryBoxFocused = false
@@ -122,7 +115,7 @@ struct MainView: View {
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 8)
-        .transition(.push(from: .top))
+        .transition(.move(edge: .leading))
     }
 }
 
