@@ -16,8 +16,8 @@ struct BusinessImageView: View {
         AsyncImage(url: imageURL) { image in
             image
                 .resizable()
-                .frame(width: width, height: height)
                 .aspectRatio(contentMode: .fill)
+                .frame(width: width, height: height)
                 .clipShape(RoundedRectangle(cornerRadius: 6))
         } placeholder: {
             ProgressView()

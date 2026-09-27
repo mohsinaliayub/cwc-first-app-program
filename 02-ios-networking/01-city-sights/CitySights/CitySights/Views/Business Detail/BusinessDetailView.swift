@@ -12,18 +12,29 @@ struct BusinessDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Image("detail-placeholder-image")
-                .resizable()
-                .frame(height: 200)
-                .overlay(alignment: .bottomTrailing) {
-                    Image("yelp-attribution-image")
-                }
+            if let imageURLString = business.imageURL {
+                BusinessImageView(for: imageURLString, width: .infinity, height: 200)
+                    .overlay(alignment: .bottomTrailing) {
+                        yelpAttributionImage
+                    }
+            } else {
+                Image("detail-placeholder-image")
+                    .resizable()
+                    .frame(height: 200)
+                    .overlay(alignment: .bottomTrailing) {
+                        yelpAttributionImage
+                    }
+            }
             if let isClosed = business.isClosed {
                 openClosedStatusView(isClosed)
             }
             
             businessInfoScrollView
         }
+    }
+    
+    private var yelpAttributionImage: some View {
+        Image("yelp-attribution-image")
     }
     
     private func openClosedStatusView(_ isClosed: Bool) -> some View {
