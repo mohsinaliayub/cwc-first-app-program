@@ -13,21 +13,32 @@ struct MainView: View {
     @State private var dealsOn = false
     @State private var popularOn = false
     @State private var categorySelection = "restaurants"
+    @FocusState private var queryBoxFocused: Bool
     
     var body: some View {
         @Bindable var model = model
         
         VStack(spacing: 0) {
             searchBar
-            queryOptionsView
+            if queryBoxFocused {
+                withAnimation {
+                    queryOptionsView
+                }
+            }
             
             segmentedPickerView
             
             if selectedTab == 1 {
                 MapView()
                     .padding(.top)
+                    .onTapGesture {
+                        queryBoxFocused = false
+                    }
             } else {
                 BusinessesListView()
+                    .onTapGesture {
+                        queryBoxFocused = false
+                    }
             }
         }
         .task {
@@ -55,8 +66,10 @@ struct MainView: View {
             
             TextField("What're you looking for?", text: $model.query)
                 .textFieldStyle(.roundedBorder)
+                .focused($queryBoxFocused)
+            
             Button {
-                // TODO: Implement query search
+                queryBoxFocused = false
                 model.searchBusinesses(query: model.query, options: getOptionsString(), category: categorySelection)
             } label: {
                 Text("Go")
