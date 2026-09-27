@@ -35,9 +35,6 @@ struct MainView: View {
                     }
             } else {
                 BusinessesListView()
-                    .onTapGesture {
-                        queryBoxFocused = false
-                    }
             }
         }
         .onChange(of: queryBoxFocused, { _, newValue in
@@ -49,7 +46,8 @@ struct MainView: View {
             model.searchBusinesses(query: nil, options: nil, category: nil)
         }
         .sheet(item: $model.selectedBusiness) { business in
-            BusinessDetailView(business: business)
+            queryBoxFocused = false
+            return BusinessDetailView(business: business)
         }
     }
     
