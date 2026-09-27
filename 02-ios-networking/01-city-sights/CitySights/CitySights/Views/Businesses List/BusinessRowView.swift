@@ -13,8 +13,12 @@ struct BusinessRowView: View {
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                Image("list-placeholder-image")
-                    .padding(.trailing, 4)
+                if let imageURLString = business.imageURL {
+                    asyncImage(for: imageURLString)
+                } else {
+                    Image("list-placeholder-image")
+                        .padding(.trailing, 4)
+                }
                 VStack(alignment: .leading, spacing: 4) {
                     Text(business.name.trimmingCharacters(in: .whitespacesAndNewlines))
                         .font(.subheadline)
@@ -29,6 +33,21 @@ struct BusinessRowView: View {
             }
             Divider()
         }
+    }
+    
+    private func asyncImage(for urlString: String) -> some View {
+        AsyncImage(url: URL(string: urlString)) { image in
+            image
+                .resizable()
+                .frame(width: 50, height: 50)
+                .aspectRatio(contentMode: .fill)
+                .clipShape(RoundedRectangle(cornerRadius: 6))
+        } placeholder: {
+            ProgressView()
+                .frame(width: 50, height: 50)
+        }
+        .padding(.trailing, 4)
+
     }
 }
 
