@@ -34,10 +34,10 @@ struct DataService {
             URLQueryItem(name: "longitude", value: String(longitude)),
             URLQueryItem(name: "limit", value: "20")
         ]
-        if let query {
+        if let query, !query.isEmpty {
             queryItems.append(URLQueryItem(name: "term", value: query))
         }
-        if let options {
+        if let options, !options.isEmpty {
             queryItems.append(URLQueryItem(name: "attributes", value: options))
         }
         if let category {
