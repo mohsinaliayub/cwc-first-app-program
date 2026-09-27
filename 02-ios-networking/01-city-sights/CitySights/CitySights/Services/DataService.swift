@@ -31,7 +31,8 @@ struct DataService {
         
         var queryItems: [URLQueryItem] = [
             URLQueryItem(name: "latitude", value: String(latitude)),
-            URLQueryItem(name: "longitude", value: String(longitude))
+            URLQueryItem(name: "longitude", value: String(longitude)),
+            URLQueryItem(name: "limit", value: "20")
         ]
         if let query {
             queryItems.append(URLQueryItem(name: "term", value: query))
