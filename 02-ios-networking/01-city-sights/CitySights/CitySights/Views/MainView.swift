@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
@@ -27,7 +28,23 @@ struct MainView: View {
             
             segmentedPickerView
             
-            if selectedTab == 1 {
+            if model.locationAuthStatus == .denied {
+                VStack {
+                    Spacer()
+                    Text("Please allow location services for this app to see sights near you.")
+                        .multilineTextAlignment(.center)
+                    Button {
+                        if let url = URL(string: UIApplication.openSettingsURLString) {
+                            UIApplication.shared.open(url)
+                        }
+                    } label: {
+                        Text("Open App Privacy Settings")
+                    }
+                    .buttonStyle(.bordered)
+                    
+                    Spacer()
+                }
+            } else if selectedTab == 1 {
                 MapView()
                     .padding(.top)
                     .onTapGesture {
