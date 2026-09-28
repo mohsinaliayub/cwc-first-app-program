@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 @main
 struct CitySightsApp: App {
@@ -24,7 +25,7 @@ struct CitySightsApp: App {
                 }
                 .onAppear {
                     // Get location to search businesses.
-                    if !needsOnboarding {
+                    if !needsOnboarding && businessViewModel.locationAuthStatus == .notDetermined {
                         businessViewModel.getUserLocation()
                     }
                 }

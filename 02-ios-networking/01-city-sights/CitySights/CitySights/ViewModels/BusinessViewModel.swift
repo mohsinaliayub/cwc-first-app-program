@@ -13,6 +13,7 @@ class BusinessViewModel: NSObject {
     var query = ""
     var businesses: [Business] = []
     var selectedBusiness: Business?
+    var locationAuthStatus: CLAuthorizationStatus = .notDetermined
     
     private let dataService: DataService
     private let locationManager = CLLocationManager()
@@ -50,6 +51,8 @@ extension BusinessViewModel: CLLocationManagerDelegate {
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        self.locationAuthStatus = manager.authorizationStatus
+        
         // Detect if user allowed, then request location.
         guard locationManager.authorizationStatus == .authorizedWhenInUse else {
             return

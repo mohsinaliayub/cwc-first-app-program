@@ -37,13 +37,10 @@ struct MainView: View {
                 BusinessesListView()
             }
         }
-        .onChange(of: queryBoxFocused, { _, newValue in
+        .onChange(of: queryBoxFocused) { _, newValue in
             withAnimation {
                 showOptions = newValue
             }
-        })
-        .task {
-            model.searchBusinesses(query: nil, options: nil, category: nil)
         }
         .sheet(item: $model.selectedBusiness) { business in
             queryBoxFocused = false
