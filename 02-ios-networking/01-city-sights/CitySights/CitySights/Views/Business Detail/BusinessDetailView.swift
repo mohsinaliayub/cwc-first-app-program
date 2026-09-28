@@ -66,7 +66,17 @@ struct BusinessDetailView: View {
                 Divider()
                 
                 TextIconDividerView(systemName: "phone", text: business.displayPhone ?? "No phone number")
+                    .onTapGesture {
+                        if let url = URL(string: "tel:\(business.phone ?? "")") {
+                            UIApplication.shared.open(url)
+                        }
+                    }
                 TextIconDividerView(systemName: "globe", text: business.url ?? "No website")
+                    .onTapGesture {
+                        if let url = URL(string: business.url ?? "") {
+                            UIApplication.shared.open(url)
+                        }
+                    }
                 TextIconDividerView(systemName: "bubble.left.and.bubble.right", text: reviewString())
             }
             .padding()
