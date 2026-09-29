@@ -10,6 +10,7 @@ import CoreLocation
 
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
+    @State private var query = ""
     @State private var selectedTab = 0
     @State private var showOptions = false
     @FocusState private var queryBoxFocused: Bool
@@ -70,15 +71,13 @@ struct MainView: View {
     
     private var searchBar: some View {
         HStack {
-            @Bindable var model = model
-            
-            TextField("What're you looking for?", text: $model.query)
+            TextField("What're you looking for?", text: $query)
                 .focused($queryBoxFocused)
                 .textFieldStyle(.roundedBorder)
             
             Button {
                 queryBoxFocused = false
-                model.searchBusinesses(query: model.query)
+                model.searchBusinesses(for: query)
             } label: {
                 Text("Go")
                     .bold()

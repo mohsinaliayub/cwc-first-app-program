@@ -10,7 +10,6 @@ import CoreLocation
 
 @Observable
 class BusinessViewModel: NSObject {
-    var query = ""
     var businesses: [Business] = []
     var categories: [Category] = []
     var selectedCategory: Category! = nil
@@ -32,7 +31,7 @@ class BusinessViewModel: NSObject {
         locationManager.delegate = self
     }
     
-    func searchBusinesses(query: String?) {
+    func searchBusinesses(for query: String?) {
         Task {
             print(getSearchOptionsForAPI() as Any)
             print(selectedCategory.alias)
@@ -98,7 +97,7 @@ extension BusinessViewModel: CLLocationManagerDelegate {
         // If location is not nil, search businesses.
         if currentUserLocation == nil {
             currentUserLocation = locations.last?.coordinate
-            searchBusinesses(query: nil)
+            searchBusinesses(for: nil)
         }
         
         // Stop location updates to preserve batter.
