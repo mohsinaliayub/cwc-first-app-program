@@ -19,10 +19,7 @@ struct MainView: View {
         @Bindable var model = model
         
         VStack(spacing: 0) {
-            searchBar
-            if showOptions {
-                queryOptionsView
-            }
+            searchBarWithOptionsView
             
             segmentedPickerView
             
@@ -37,6 +34,16 @@ struct MainView: View {
             queryBoxFocused = false
             return BusinessDetailView(business: business)
         }
+    }
+    
+    private var searchBarWithOptionsView: some View {
+        VStack(spacing: 0) {
+            queryBoxView
+            if showOptions {
+                queryOptionsView
+            }
+        }
+        .disabled(model.locationAuthStatus == .denied)
     }
     
     private var currentView: some View {
@@ -69,7 +76,7 @@ struct MainView: View {
         .padding(.horizontal)
     }
     
-    private var searchBar: some View {
+    private var queryBoxView: some View {
         HStack {
             TextField("What're you looking for?", text: $query)
                 .focused($queryBoxFocused)
