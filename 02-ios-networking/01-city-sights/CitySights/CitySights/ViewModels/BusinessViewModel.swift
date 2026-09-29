@@ -34,10 +34,10 @@ class BusinessViewModel: NSObject {
     func searchBusinesses(for query: String?) {
         Task {
             let options = getSearchOptionsForAPI()
-            businesses = await dataService.searchRestaurants(for: currentUserLocation,
-                                                             query: query,
-                                                             options: options,
-                                                             category: selectedCategory.alias)
+            businesses = await dataService.searchBusinesses(of: selectedCategory.alias,
+                                                            for: currentUserLocation,
+                                                            query: query,
+                                                            options: options)
         }
     }
     

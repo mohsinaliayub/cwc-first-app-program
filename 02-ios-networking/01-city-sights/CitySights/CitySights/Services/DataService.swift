@@ -12,15 +12,15 @@ struct DataService {
     private let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String
     
     /// Search local restaurants based on your location.
-    func searchRestaurants(for userLocation: CLLocationCoordinate2D?, query: String?, options: String?, category: String) async -> [Business] {
-        guard let url = createBusinessSearchURL(for: userLocation, query: query, options: options, category: category) else {
+    func searchBusinesses(of category: String, for userLocation: CLLocationCoordinate2D?, query: String?, options: String?) async -> [Business] {
+        guard let url = createBusinessSearchURL(of: category, for: userLocation, query: query, options: options) else {
             return []
         }
         
         return await fetchBusinesses(from: url)
     }
     
-    private func createBusinessSearchURL(for location: CLLocationCoordinate2D?, query: String?, options: String?, category: String) -> URL? {
+    private func createBusinessSearchURL(of category: String, for location: CLLocationCoordinate2D?, query: String?, options: String?) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "api.yelp.com"
