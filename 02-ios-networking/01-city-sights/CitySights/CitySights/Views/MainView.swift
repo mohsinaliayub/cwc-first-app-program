@@ -113,14 +113,22 @@ struct MainView: View {
     
     private var queryOptionsView: some View {
         VStack {
-            Toggle("Popular", isOn: $popularOn)
-            Toggle("Deals", isOn: $dealsOn)
+            optionToggles
             
             categoriesPicker
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 8)
         .transition(.move(edge: .leading))
+    }
+    
+    private var optionToggles: some View {
+        VStack {
+            @Bindable var model = model
+            ForEach(model.searchOptions.indices, id: \.self) { index in
+                Toggle(model.searchOptions[index].title, isOn: $model.searchOptions[index].isOn)
+            }
+        }
     }
     
     private var categoriesPicker: some View {

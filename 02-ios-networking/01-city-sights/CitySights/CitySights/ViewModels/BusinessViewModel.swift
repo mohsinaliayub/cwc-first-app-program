@@ -25,6 +25,7 @@ class BusinessViewModel: NSObject {
         self.dataService = dataService
         super.init()
         fetchCategories()
+        createOptionsForSearch()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
     }
