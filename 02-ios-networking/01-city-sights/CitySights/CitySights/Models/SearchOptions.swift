@@ -9,10 +9,12 @@ import Foundation
 
 /// Enhance query search with search options.
 struct SearchOption {
+    /// A unique identifier for the option.
+    let id: String
     /// The name of search option.
     let title: String
     /// A flag indicating the option's state.
-    let isOn: Bool
-    /// A unique identifier for the option.
-    let id: String
+    var isOn: Bool = false
 }
+
+extension SearchOption: Identifiable { }

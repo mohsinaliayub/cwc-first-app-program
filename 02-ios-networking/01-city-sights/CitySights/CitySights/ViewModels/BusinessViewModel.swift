@@ -13,6 +13,7 @@ class BusinessViewModel: NSObject {
     var query = ""
     var businesses: [Business] = []
     var categories: [Category] = []
+    var searchOptions: [SearchOption] = []
     var selectedBusiness: Business?
     var locationAuthStatus: CLAuthorizationStatus = .notDetermined
     
@@ -51,6 +52,11 @@ class BusinessViewModel: NSObject {
         // So, no need to call the API.
         categories.append(Category(alias: "restaurants", title: "Restaurants"))
         categories.append(Category(alias: "arts", title: "Arts"))
+    }
+    
+    private func createOptionsForSearch() {
+        searchOptions.append(SearchOption(id: "hot_and_new", title: "Popular"))
+        searchOptions.append(SearchOption(id: "deals", title: "Deals On"))
     }
 }
 
