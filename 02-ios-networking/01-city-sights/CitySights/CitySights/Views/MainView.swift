@@ -11,7 +11,7 @@ import CoreLocation
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
     @State private var selectedTab = 0
-    @State private var showOptions = true
+    @State private var showOptions = false
     @FocusState private var queryBoxFocused: Bool
     
     var body: some View {
@@ -25,31 +25,7 @@ struct MainView: View {
             
             segmentedPickerView
             
-            if model.locationAuthStatus == .denied {
-                VStack {
-                    Spacer()
-                    Text("Please allow location services for this app to see sights near you.")
-                        .multilineTextAlignment(.center)
-                    Button {
-                        if let url = URL(string: UIApplication.openSettingsURLString) {
-                            UIApplication.shared.open(url)
-                        }
-                    } label: {
-                        Text("Open App Privacy Settings")
-                    }
-                    .buttonStyle(.bordered)
-                    
-                    Spacer()
-                }
-            } else if selectedTab == 1 {
-                MapView()
-                    .padding(.top)
-                    .onTapGesture {
-                        queryBoxFocused = false
-                    }
-            } else {
-                BusinessesListView()
-            }
+            currentView
         }
         .onChange(of: queryBoxFocused) { _, newValue in
             withAnimation {
@@ -59,6 +35,25 @@ struct MainView: View {
         .sheet(item: $model.selectedBusiness) { business in
             queryBoxFocused = false
             return BusinessDetailView(business: business)
+        }
+    }
+    
+    private var currentView: some View {
+        ZStack {
+            if model.locationAuthStatus == .denied {
+                LocationServicesDeniedView()
+            } else if selectedTab == 1 {
+                MapView()
+                    .padding(.top)
+                    .onTapGesture {
+                        queryBoxFocused = false
+                    }
+            } else {
+                BusinessesListView()
+                    .onTapGesture {
+                        queryBoxFocused = false
+                    }
+            }
         }
     }
     
