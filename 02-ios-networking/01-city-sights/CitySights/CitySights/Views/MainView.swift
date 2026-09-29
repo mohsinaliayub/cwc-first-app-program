@@ -116,20 +116,24 @@ struct MainView: View {
             Toggle("Popular", isOn: $popularOn)
             Toggle("Deals", isOn: $dealsOn)
             
-            HStack {
-                Text("Category")
-                Spacer()
-                Picker("Category", selection: $categorySelection) {
-                    ForEach(model.categories, id: \.alias) { category in
-                        Text(category.title)
-                            .tag(category.alias)
-                    }
-                }
-            }
+            categoriesPicker
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 8)
         .transition(.move(edge: .leading))
+    }
+    
+    private var categoriesPicker: some View {
+        HStack {
+            Text("Category")
+            Spacer()
+            Picker("Category", selection: $categorySelection) {
+                ForEach(model.categories, id: \.alias) { category in
+                    Text(category.title)
+                        .tag(category.alias)
+                }
+            }
+        }
     }
 }
 
