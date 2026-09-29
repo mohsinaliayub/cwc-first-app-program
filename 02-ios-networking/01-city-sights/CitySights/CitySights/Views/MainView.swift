@@ -14,7 +14,7 @@ struct MainView: View {
     @State private var dealsOn = false
     @State private var popularOn = false
     @State private var categorySelection = "restaurants"
-    @State private var showOptions = false
+    @State private var showOptions = true
     @FocusState private var queryBoxFocused: Bool
     
     var body: some View {
@@ -120,8 +120,10 @@ struct MainView: View {
                 Text("Category")
                 Spacer()
                 Picker("Category", selection: $categorySelection) {
-                    Text("Restaurants").tag("restaurants")
-                    Text("Arts").tag("arts")
+                    ForEach(model.categories, id: \.alias) { category in
+                        Text(category.title)
+                            .tag(category.alias)
+                    }
                 }
             }
         }

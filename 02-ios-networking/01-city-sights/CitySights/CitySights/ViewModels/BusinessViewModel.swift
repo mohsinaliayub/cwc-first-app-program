@@ -12,6 +12,7 @@ import CoreLocation
 class BusinessViewModel: NSObject {
     var query = ""
     var businesses: [Business] = []
+    var categories: [Category] = []
     var selectedBusiness: Business?
     var locationAuthStatus: CLAuthorizationStatus = .notDetermined
     
@@ -22,6 +23,7 @@ class BusinessViewModel: NSObject {
     init(dataService: DataService = DataService()) {
         self.dataService = dataService
         super.init()
+        fetchCategories()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
     }
@@ -42,6 +44,13 @@ class BusinessViewModel: NSObject {
         
         currentUserLocation = nil
         locationManager.requestLocation()
+    }
+    
+    private func fetchCategories() {
+        // Right now, we are working with only two categories.
+        // So, no need to call the API.
+        categories.append(Category(alias: "restaurants", title: "Restaurants"))
+        categories.append(Category(alias: "arts", title: "Arts"))
     }
 }
 
