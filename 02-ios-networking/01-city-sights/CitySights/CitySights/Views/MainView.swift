@@ -11,9 +11,6 @@ import CoreLocation
 struct MainView: View {
     @Environment(BusinessViewModel.self) var model
     @State private var selectedTab = 0
-    @State private var dealsOn = false
-    @State private var popularOn = false
-    @State private var categorySelection = "restaurants"
     @State private var showOptions = true
     @FocusState private var queryBoxFocused: Bool
     
@@ -86,7 +83,7 @@ struct MainView: View {
             
             Button {
                 queryBoxFocused = false
-                model.searchBusinesses(query: model.query, options: getOptionsString(), category: categorySelection)
+                model.searchBusinesses(query: model.query)
             } label: {
                 Text("Go")
                     .bold()
@@ -98,17 +95,6 @@ struct MainView: View {
             }
         }
         .padding()
-    }
-    
-    private func getOptionsString() -> String {
-        var optionsArray = [String]()
-        if popularOn {
-            optionsArray.append("hot_and_new")
-        }
-        if dealsOn {
-            optionsArray.append("deals")
-        }
-        return optionsArray.joined(separator: ",")
     }
     
     private var queryOptionsView: some View {
@@ -133,12 +119,13 @@ struct MainView: View {
     
     private var categoriesPicker: some View {
         HStack {
+            @Bindable var model = model
             Text("Category")
             Spacer()
-            Picker("Category", selection: $categorySelection) {
-                ForEach(model.categories, id: \.alias) { category in
+            Picker("Category", selection: $model.selectedCategory) {
+                ForEach(model.categories) { category in
                     Text(category.title)
-                        .tag(category.alias)
+                        .tag(category)
                 }
             }
         }

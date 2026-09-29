@@ -16,3 +16,11 @@ struct Category: Decodable {
     /// The renowned name for the category.
     let title: String
 }
+
+extension Category: Identifiable {
+    var id: String { alias }
+}
+
+extension Category: Equatable { }
+
+extension Category: Hashable { }

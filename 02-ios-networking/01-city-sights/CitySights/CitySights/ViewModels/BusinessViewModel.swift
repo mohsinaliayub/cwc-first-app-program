@@ -13,6 +13,7 @@ class BusinessViewModel: NSObject {
     var query = ""
     var businesses: [Business] = []
     var categories: [Category] = []
+    var selectedCategory: Category! = nil
     var searchOptions: [SearchOption] = []
     var selectedBusiness: Business?
     var locationAuthStatus: CLAuthorizationStatus = .notDetermined
@@ -25,14 +26,17 @@ class BusinessViewModel: NSObject {
         self.dataService = dataService
         super.init()
         fetchCategories()
+        selectedCategory = categories.first
         createOptionsForSearch()
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.delegate = self
     }
     
-    func searchBusinesses(query: String?, options: String?, category: String?) {
+    func searchBusinesses(query: String?) {
         Task {
-            businesses = await dataService.searchRestaurants(for: currentUserLocation, query: query, options: options, category: category)
+            print(getSearchOptionsForAPI() as Any)
+            print(selectedCategory.alias)
+//            businesses = await dataService.searchRestaurants(for: currentUserLocation, query: query, options: options, category: category)
         }
     }
     
@@ -46,6 +50,18 @@ class BusinessViewModel: NSObject {
         
         currentUserLocation = nil
         locationManager.requestLocation()
+    }
+    
+    /// Combine search options to create a parameter value for api call.
+    ///
+    /// If the options are turned on, join them using a comma (,).
+    /// If the options are turned off, get a nil string
+    private func getSearchOptionsForAPI() -> String? {
+        let turnedOnSearchOptions = searchOptions.filter { $0.isOn }
+        guard !turnedOnSearchOptions.isEmpty else { return nil }
+        
+        // We need the id for proper search, the api requires it.
+        return turnedOnSearchOptions.map({ $0.id }).joined(separator: ",")
     }
     
     private func fetchCategories() {
@@ -82,7 +98,7 @@ extension BusinessViewModel: CLLocationManagerDelegate {
         // If location is not nil, search businesses.
         if currentUserLocation == nil {
             currentUserLocation = locations.last?.coordinate
-            searchBusinesses(query: nil, options: nil, category: nil)
+            searchBusinesses(query: nil)
         }
         
         // Stop location updates to preserve batter.
